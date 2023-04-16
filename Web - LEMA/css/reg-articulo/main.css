@@ -1,0 +1,61 @@
+main h2{
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 30px;
+}
+
+main form section.separador{
+    border-left: 2px solid rgb(117, 117, 117);
+}
+
+main form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+section.parte-izq, section.parte-der{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+main form section input{
+    width: 430px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+main form input[type="submit"]{
+    border-radius: 20px;
+    color: #F6F6F6;
+    background-color: #44AFAA;
+    margin: 20px;
+}
+
+main form input[type="submit"]:hover{
+    color: #44AFAA;
+    background-color: #F6F6F6;
+    border: 1px solid rgb(218, 218, 218);
+    
+}
+
+main form section select{
+    width: 430px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+main form input[type="reset"]{
+    border-radius: 20px;
+    color: #F6F6F6;
+    background-color: rgb(34, 33, 33);
+    margin: 20px;
+}
+
+main form input[type="reset"]:hover{
+    color: rgb(34, 33, 33);
+    background-color: #F6F6F6;
+    border: 1px solid rgb(218, 218, 218);
+}

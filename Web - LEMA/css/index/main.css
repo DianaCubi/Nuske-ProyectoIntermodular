@@ -1,0 +1,265 @@
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* PARTE SUPERIOR */
+main section.main-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main section.main-superior article.bienvenida {
+    margin-left: 40px;
+    width: 30%;
+}
+
+main section.main-superior article.bienvenida h2 {
+    font-size: 5em;
+    margin-bottom: 5px;
+}
+
+main section.main-superior article.bienvenida p {
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+main section.main-superior article.bienvenida input {
+    width: 145px;
+    height: 50px;
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+
+    font-size: 20px;
+}
+
+main section.main-superior article.bienvenida input.bot-comprar {
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+}
+
+main section.main-superior article.bienvenida input.bot-comprar:hover {
+    color: #44AFAA;
+    background-color: white;
+}
+
+main section.main-superior article.bienvenida input.bot-contactar {
+    border: 1px solid rgb(34, 33, 33);
+    background-color: rgb(34, 33, 33);
+}
+
+main section.main-superior article.bienvenida input.bot-contactar:hover {
+    color: rgb(34, 33, 33);
+    background-color: white;
+}
+
+main section.main-superior img {
+    width: 650px;
+}
+
+/* PARTE INFERIOR */
+main section.main-inferior h4 {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+main section.main-inferior section.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*AQUI*/
+main section.main-inferior section.productos a {
+    width: 27%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+main section.main-inferior section.productos a article.producto {
+
+    border-radius: 20px;
+    border: 1px solid rgb(206, 206, 206);
+
+}
+
+main section.main-inferior a article.producto img {
+    height: 230px;
+}
+
+main section.main-inferior a article.producto:hover {
+    -webkit-box-shadow: 0px 9px 0px 0px #44AFAA, 0px -3px 10px 0px #A3A3A3;
+    box-shadow: 0px 9px 0px 0px #44AFAA, 0px -3px 10px 0px #A3A3A3;
+
+}
+
+
+main section.main-inferior a article.producto p:first-child {
+    font-size: 1.5em;
+    color: #44AFAA;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main section.main-inferior a article.producto p:nth-child(2) {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+main section.main-inferior a article.producto p:last-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+/*MEDIA QUERY 1120PX*/
+@media (max-width: 1120px) {
+    main {
+        width: 100%;
+        /* background-color: blue; */
+    }
+
+    main section.main-superior {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main section.main-superior article.bienvenida {
+        text-align: center;
+        margin-left: 40px;
+        width: 90%;
+    }
+    
+    main section.main-superior article.bienvenida h2 {
+        font-size: 3em;
+    }
+
+    main section.main-superior article.bienvenida p{
+        font-size: 1em;
+    }
+
+    main section.main-superior article.bienvenida input {
+        margin: 10px;
+    }
+
+    main section.main-superior img {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main{
+        width: 100vw;
+        /* background-color: red; */
+    }
+
+    main section.main-inferior a article.producto p:first-child {
+        font-size: 20px;
+    }
+    
+    main section.main-inferior a article.producto p:nth-child(2) {
+        display: none;
+    }
+
+    main section.main-inferior a article.producto p:last-child {
+        font-size: 1.2em;
+    }
+
+    main section.main-inferior a article.producto img {
+        height: 150px;
+    }
+
+    main section.main-inferior h4{
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px){
+    main{
+        /* background-color: green; */
+    }
+
+    main section.main-inferior a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    main section.main-inferior a article.producto p:first-child{
+        margin: 0;
+    }
+
+    main section.main-inferior a article.producto img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+    main section.main-inferior section.productos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main section.main-inferior section.productos a{
+        display: flex;
+        align-items: center;
+    }
+
+    main section.main-superior img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+    main{
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+    main section.main-superior img {
+        display: none;
+    }
+
+    main section.main-superior article.bienvenida {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 360px) {
+    main{
+        /* background-color: rgb(205, 62, 109); */
+    }
+
+    main section.main-superior img {
+        width: 150px;
+    }
+}
+
+/* @media (min-width: 1200px) {
+    main{
+        background-color: rgb(219, 214, 66);
+    }
+} */

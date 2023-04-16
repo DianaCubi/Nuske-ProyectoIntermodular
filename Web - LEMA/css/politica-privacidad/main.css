@@ -1,0 +1,6 @@
+main section{
+    margin: 0 auto;
+    width: 90%;
+    height: 600px;
+    overflow: scroll;
+}

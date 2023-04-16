@@ -1,0 +1,38 @@
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    background-color: #303030;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li{
+    padding: 20px;
+}
+
+
+footer ul li a{
+    font-size: 1.1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li:hover a{
+    text-decoration: underline;
+}
+
+@media (max-width: 480px){
+    footer ul li a{
+        font-size: 14px;
+    }
+}
