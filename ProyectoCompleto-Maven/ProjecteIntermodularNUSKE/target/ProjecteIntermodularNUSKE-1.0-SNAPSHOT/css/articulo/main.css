@@ -1,0 +1,110 @@
+main section.parte-superior{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+main section.parte-superior section.imagen-producto{
+    padding-left: 225px;
+}
+
+main section.parte-superior section.imagen-producto figure img{
+    width: 330px;
+}
+
+main section.parte-superior section.info-producto{
+    max-width: 60%;
+    padding-left: 225px;
+    display: flex;
+    flex-direction: column;
+}
+
+main section.parte-superior section.info-producto h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #44AFAA;
+}
+
+main section.parte-superior section.info-producto article{
+    display: flex;
+    justify-content: space-between;
+}
+
+main section.parte-superior section.info-producto p.precio{
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+main section.parte-superior section.info-producto div.valoraciones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main section.parte-superior section.info-producto div.valoraciones p{
+    margin-left: 10px;
+}
+
+main section.parte-superior section.info-producto p.descripcion{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+main section.parte-superior section.info-producto input[type="number"]{
+    width: 430px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main section.parte-superior section.info-producto a{
+    color: black;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+main section.parte-superior section.info-producto a:hover{
+    text-decoration: underline;
+    text-decoration-color: #44AFAA;
+    text-decoration-thickness: 2px;
+}
+
+main section.parte-superior section.info-producto input[type="submit"]{
+    width: 145px;
+    height: 50px;
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+
+    font-size: 20px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+}
+
+main section.parte-superior section.info-producto input[type="submit"]:hover{
+    color: #44AFAA;
+    background-color: white;
+}
+
+main section.parte-superior section.info-producto button{
+    width: 145px;
+    height: 50px;
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+
+    font-size: 20px;
+    border: 1px solid rgb(34, 33, 33);
+    background-color: rgb(34, 33, 33);
+
+    margin-left: 50px;
+}
+
+main section.parte-superior section.info-producto button:hover{
+    color: rgb(34, 33, 33);
+    background-color: white;
+}
+

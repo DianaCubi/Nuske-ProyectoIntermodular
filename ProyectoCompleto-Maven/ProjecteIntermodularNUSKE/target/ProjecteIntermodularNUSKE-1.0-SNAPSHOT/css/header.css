@@ -1,0 +1,157 @@
+header{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header section.header-wrapper{
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+}
+
+header section.titulo a{
+    font-size: 40px;
+    color: #44AFAA;
+    text-decoration: none;
+    font-family: monospace;
+    letter-spacing: 3px;
+}
+
+header section.navegacion ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+header section.navegacion ul li ul.subcategoria{
+    display: none;
+}
+
+/* header section.navegacion ul li:hover ul.subcategoria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: #F6F6F6;
+    border: 1px solid #44AFAA;
+}
+
+header section.navegacion ul li:hover ul.subcategoria li a{
+    color: rgb(47, 47, 47);
+    font-size: 1em;
+}
+ */
+header section.navegacion ul li{
+    padding: 30px;
+}
+
+header section.navegacion ul li a{
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+}
+
+li.buscador{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1120px) {
+    header section.titulo h3{
+        margin: 20px;
+    }
+
+    header section.header-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    header section.navegacion ul{
+        padding: 0;
+    }
+
+    header section.navegacion ul li{
+        padding: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    header section.navegacion ul{
+        margin: 0;
+    }
+
+    header section.navegacion ul li{
+        margin-left: 40px;
+        padding: 10px;
+    }
+    
+    header section.navegacion ul{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "perro gato exotico"
+                            " buscador buscador buscador"
+                            "inicio-sesion . cesta";
+    }
+
+    header section.navegacion ul li.perro{
+        grid-area: perro;
+        margin-right: 20px;
+    }
+
+    header section.navegacion ul li.gato{
+        grid-area: gato;
+        margin-right: 20px;
+    }
+
+    header section.navegacion ul li.exotico{
+        grid-area: exotico;
+    }
+
+    header section.navegacion ul li.buscador{
+        grid-area: buscador;
+    }
+
+    header section.navegacion ul li.buscador input{
+        margin-left: 5px;
+        width: 100%;
+    }
+
+    header section.navegacion ul li.inicio-sesion{
+        grid-area: inicio-sesion;
+        justify-self: center;
+    }
+
+    header section.navegacion ul li.cesta{
+        grid-area: cesta;
+        justify-self: center;
+    }
+}
+
+
+@media (max-width: 576px){
+    header section.navegacion ul{
+        padding: 0;
+    }
+
+    header section.navegacion ul li{
+        padding: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    header section.navegacion ul li{
+        margin-left: 10px;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    
+}
