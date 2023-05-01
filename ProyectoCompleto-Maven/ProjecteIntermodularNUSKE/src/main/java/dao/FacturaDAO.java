@@ -10,6 +10,8 @@ import dto.Pedido;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -29,12 +31,13 @@ public class FacturaDAO extends TablaDAO<Factura> {
 
     @Override
     public int anyadir(Factura f) throws SQLException {
-        String sentenciaSQL = "INSERT INTO " + tabla + " VALUES(?,?,?,?)";
+        String sentenciaSQL = "INSERT INTO " + tabla + " VALUES(?,?,?,?,?)";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setInt(1, f.getNumeroFactura());
-        prepared.setInt(2, f.getPedido().getCodigo());
-        prepared.setInt(3, f.getFacturacion().getNum());
-        prepared.setInt(4, f.getPedido().getCliente().getCodigo());            
+        prepared.setTimestamp(2, Timestamp.valueOf(f.getFechaFactura()));
+        prepared.setInt(3, f.getPedido().getCodigo());
+        prepared.setInt(4, f.getFacturacion().getNum());
+        prepared.setInt(5, f.getPedido().getCliente().getCodigo());            
         return prepared.executeUpdate();
     }
 
@@ -64,11 +67,12 @@ public class FacturaDAO extends TablaDAO<Factura> {
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
-            int codigo = resultSet.getInt("NUM_FACTURA"); 
+            int codigo = resultSet.getInt("NUM_FACTURA");
+            LocalDateTime fechaFactura = resultSet.getTimestamp("fecha_factura").toLocalDateTime();
             Pedido pedido = new PedidoDAO().getByCodigo(resultSet.getInt("COD_PEDIDO"));
             Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getByte("NUM_DIRECCION"), pedido.getCliente());
 //            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("NUM_DIRECCION"));
-            lista.add(new Factura(codigo, pedido, direccion));
+            lista.add(new Factura(codigo, fechaFactura, pedido, direccion));
         }
 
         return lista;
@@ -81,10 +85,11 @@ public class FacturaDAO extends TablaDAO<Factura> {
         prepared.setInt(1, codigo);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
+            LocalDateTime fechaFactura = resultSet.getTimestamp("fecha_factura").toLocalDateTime();
             Pedido pedido = new PedidoDAO().getByCodigo(resultSet.getInt("cod_pedido"));
 //            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("num_direccion"));
             Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getByte("NUM_DIRECCION"), pedido.getCliente());
-            return new Factura(codigo, pedido, direccion);
+            return new Factura(codigo,fechaFactura, pedido, direccion);
         }
 
         return null;

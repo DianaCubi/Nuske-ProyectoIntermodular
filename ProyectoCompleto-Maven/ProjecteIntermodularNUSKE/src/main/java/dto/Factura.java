@@ -1,14 +1,18 @@
 package dto;
 
+import java.time.LocalDateTime;
+
 public class Factura {
     //ATRIBUTOS
     private final int numeroFactura;
+    private final LocalDateTime fechaFactura;
     private final Pedido pedido;
     private final Direccion facturacion;
     
     //CONSTRUCTOR
-    public Factura(int numeroFactura, Pedido pedido, Direccion facturacion) {
+    public Factura(int numeroFactura, LocalDateTime fechaFactura, Pedido pedido, Direccion facturacion) {
         this.numeroFactura = numeroFactura;
+        this.fechaFactura = fechaFactura;
         this.pedido = pedido;
         this.facturacion = facturacion;
     }
@@ -18,6 +22,11 @@ public class Factura {
         return numeroFactura;
     }
 
+    public LocalDateTime getFechaFactura() {
+        return fechaFactura;
+    }
+    
+     
     public Pedido getPedido() {
         return pedido;
     }
@@ -27,8 +36,8 @@ public class Factura {
     }
 
     @Override
-    public String toString() {
-        return "Factura{" + "numeroFactura=" + numeroFactura + ", pedido=" + pedido + ", facturacion=" + facturacion + '}';
+        public String toString() {
+        return "Factura{" + "numeroFactura=" + numeroFactura + ", fechaFactura=" + fechaFactura + ", pedido=" + pedido + ", facturacion=" + facturacion + '}';
     }
     
         

@@ -369,12 +369,12 @@ public class PruebasDAO {
 
 //            *CLASE FACTURA*
             FacturaDAO fDAO = new FacturaDAO();
-            //--GETBYCODIGO
+//            //--GETBYCODIGO
 //            Factura f = fDAO.getByCodigo(3);
 //            System.out.println(f);
             
             //--GETALL
-//            ArrayList<Factura> facturas = fDAO.getAll();
+            ArrayList<Factura> facturas = fDAO.getAll();
 //            for(Factura ff : facturas){
 //                System.out.println(ff);
 //            }
@@ -394,7 +394,7 @@ public class PruebasDAO {
 //            Cliente clienteAux = cDAO.getByCodigo(3);
 //            Direccion dirPago = dDAO.getByCodigo(1, clienteAux);
 //            Pedido pedAux = pedDAO.getByCodigo(7);
-//            Factura f3 = new Factura(4, pedAux, dirPago);
+//            Factura f3 = new Factura(4, LocalDateTime.now() ,pedAux, dirPago);
 //            
 //            fDAO.anyadir(f3);
 //            fDAO.eliminar(f3);

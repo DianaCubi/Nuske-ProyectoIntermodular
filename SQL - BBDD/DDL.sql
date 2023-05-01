@@ -173,6 +173,7 @@ constraint estado_pedido check (estado in ('PENDIENTE_DE_PAGO', 'PROCESANDO', 'E
 
 create table NUSKE_FACTURA (
 NUM_FACTURA number (6) primary key,
+FECHA_FACTURA date not null,
 COD_PEDIDO number (6) unique,
 NUM_DIRECCION number (4) not null,
 COD_USUARIO number (4) not null,

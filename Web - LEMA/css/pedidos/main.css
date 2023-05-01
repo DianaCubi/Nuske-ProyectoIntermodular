@@ -10,7 +10,6 @@ main{
 main h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
-    border-bottom: 1px solid grey;
 }
 
 main article{
