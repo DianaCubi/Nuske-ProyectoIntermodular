@@ -1,0 +1,142 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reg-mascota/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <title>Nuskë - Login</title>
+</head>
+<body>
+    <header>
+        <section class="header-wrapper">
+            <section class="titulo">
+                <a href="./index.jsp">
+                  <h3>NUSKË</h3>
+                </a>
+              </section>
+        <section class="navegacion">
+          <ul>
+            <li class="perro">
+              <a href="#">Perros</a>
+              <ul class="subcategoria">
+                <li><a href="#">Hogar</a></li>
+                <li><a href="#">Entretenimiento</a></li>
+                <li><a href="#">Alimentación</a></li>
+                <li><a href="#">Salud e higiene</a></li>
+              </ul>
+            </li>
+            <li class="gato">
+              <a href="#">Gatos</a>
+              <ul class="subcategoria">
+                  <li><a href="#">Hogar</a></li>
+                  <li><a href="#">Entretenimiento</a></li>
+                  <li><a href="#">Alimentación</a></li>
+                  <li><a href="#">Salud e higiene</a></li>
+              </ul>
+            </li>
+            <li class="exotico">
+              <a href="#">Exóticos</a>
+              <ul class="subcategoria">
+                  <li><a href="#">Hogar</a></li>
+                  <li><a href="#">Entretenimiento</a></li>
+                  <li><a href="#">Alimentación</a></li>
+                  <li><a href="#">Salud e higiene</a></li>
+              </ul>
+            </li>
+            <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
+            <li class="inicio-sesion">
+              <a href="login.jsp"><i class="bi bi-person-fill">Usuario</i></a>
+            </li>
+            <li class="cesta">
+              <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+      </header>
+      <main>
+        <h2>Registro de mascota</h2>
+        <form action="" method="post">
+            <section class="general">
+               
+                <label for="animalNombre">Nombre</label>
+                <input type="text" id="animalNombre" name="animalNombre" required><br><br>
+  
+                <label for="animalRaza">Raza</label>
+                <input type="text" id="animalRaza" name="animalRaza" required><br><br>
+  
+                <label for="animalDescripcion">Descripción</label>
+                <textarea id="animalDescripcion" name="animalDescripcion" rows="5" cols="30"></textarea><br><br>
+  
+                <label for="animalFoto">Foto</label>
+                <input type="file" id="animalFoto" name="animalFoto"><br><br>
+  
+                <label for="animalCamada">Camada</label>
+                <input type="text" id="animalCamada" name="animalCamada"><br><br>
+  
+                <label for="animalColor">Color:</label>
+                    <select id="animalColor" name="animalColor">
+                    <option value="blanco">Blanco</option>
+                    <option value="negro">Negro</option>
+                    <option value="marrón">Marrón</option>
+                    <option value="gris">Gris</option>
+                    <option value="naranja">Naranja</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="verde">Verde</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="morado">Morado</option>
+                    </select><br><br>
+                
+            </section>
+            <section class="separador"></section>
+            <section class="especifico">
+                <label for="animalEstado">Estado</label>
+                <select id="animalEstado" name="animalEstado">
+                  <option value="vulnerable">Vulnerable</option>
+                  <option value="en casa">En casa</option>
+                  <option value="perdida">Perdida</option>
+                </select><br><br>
+                
+                <label for="animalRazonEstado">Razón del estado</label>
+                <input type="text" id="animalRazonEstado" name="animalRazonEstado"><br><br>
+
+                <label for="ultUbicacion">Última ubicación (importante si está perdida)</label>
+                <input type="text" id="ultUbicacion" name="ultimaUbicacionPerdido"><br><br>
+                
+                <label for="animalOtrosDatos">Otros datos de interés</label>
+                <textarea id="animalOtrosDatos" name="animalOtrosDatos" rows="5" cols="30"></textarea><br><br>
+                
+        
+                    <input type="submit" value="Registrar mascota">
+                    <input type="reset" value="Borrar">
+            </section>
+        </form>
+
+      </main>
+      <footer>
+        <ul>
+          <li><a href="#">Contacta con nosotros</a></li>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="politica-privacidad.jsp">Política de privacidad</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Condiciones generales</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Otros</a></li>
+        </ul>
+      </footer>
+</body>
+</html>

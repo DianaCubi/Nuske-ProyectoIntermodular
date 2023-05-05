@@ -53,7 +53,7 @@ main section.parte-superior section.info-producto p.descripcion{
     margin-bottom: 50px;
 }
 
-main section.parte-superior section.info-producto input[type="number"]{
+main section.parte-superior section.info-producto form input[type="number"]{
     width: 430px;
     height: 35px;
     border: none;
@@ -62,19 +62,20 @@ main section.parte-superior section.info-producto input[type="number"]{
     margin-bottom: 10px;
 }
 
-main section.parte-superior section.info-producto a{
+main section.parte-superior section.info-producto form a{
+    display: block;
     color: black;
     text-decoration: none;
     margin-bottom: 20px;
 }
 
-main section.parte-superior section.info-producto a:hover{
+main section.parte-superior section.info-producto form a:hover{
     text-decoration: underline;
     text-decoration-color: #44AFAA;
     text-decoration-thickness: 2px;
 }
 
-main section.parte-superior section.info-producto input[type="submit"]{
+main section.parte-superior section.info-producto form input[type="submit"]{
     width: 145px;
     height: 50px;
     color: rgb(247, 247, 247);
@@ -85,17 +86,17 @@ main section.parte-superior section.info-producto input[type="submit"]{
     background-color: #44AFAA;
 }
 
-main section.parte-superior section.info-producto input[type="submit"]:hover{
+main section.parte-superior section.info-producto form input[type="submit"]:hover{
     color: #44AFAA;
     background-color: white;
 }
 
-main section.parte-superior section.info-producto button{
+main section.parte-superior section.info-producto form button{
     width: 145px;
     height: 50px;
     color: rgb(247, 247, 247);
     text-decoration: none;
-
+    margin-top: 20px;
     font-size: 20px;
     border: 1px solid rgb(34, 33, 33);
     background-color: rgb(34, 33, 33);
@@ -103,8 +104,82 @@ main section.parte-superior section.info-producto button{
     margin-left: 50px;
 }
 
-main section.parte-superior section.info-producto button:hover{
+main section.parte-superior section.info-producto form button:hover{
     color: rgb(34, 33, 33);
     background-color: white;
 }
 
+button.any-lista{
+    display: none;
+}
+
+main section.parte-inferior h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    margin: 50px;
+}
+
+main section.parte-inferior form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+main section.parte-inferior form article.misma-linea{
+    display: flex;
+}
+
+main section.parte-inferior form article.misma-linea article{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+main section.parte-inferior form input, main section.parte-inferior form textarea, select{
+    width: 430px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+main section.parte-inferior form select, main section.parte-inferior form input[type="number"]{
+    width: 100px;
+}
+
+main section.parte-inferior form input[type="submit"]{
+    width: 100px;
+    border-radius: 20px;
+    color: #F6F6F6;
+    background-color: #44AFAA;
+}
+
+main section.parte-inferior form input[type="submit"]:hover{
+    color: #44AFAA;
+    background-color: #F6F6F6;
+    border: 1px solid rgb(218, 218, 218);
+}
+
+
+section.comentarios{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+section.comentarios article.comentario{
+    width: 900px;
+    border-bottom: 1px solid rgb(186, 186, 186);
+}
+
+section.comentarios article.comentario p:first-child{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    color: #44AFAA;
+}
+section.comentarios article.comentario p span{
+    font-weight: bold;
+}

@@ -26,7 +26,7 @@ main section.main-superior article.bienvenida p {
     margin-bottom: 50px;
 }
 
-main section.main-superior article.bienvenida input {
+main section.main-superior article.bienvenida a {
     width: 145px;
     height: 50px;
     color: rgb(247, 247, 247);
@@ -34,23 +34,43 @@ main section.main-superior article.bienvenida input {
 
     font-size: 20px;
 }
-
-main section.main-superior article.bienvenida input.bot-comprar {
-    border: 1px solid #44AFAA;
-    background-color: #44AFAA;
+main section.main-superior article.bienvenida article.botones{
+    display: flex;
 }
 
-main section.main-superior article.bienvenida input.bot-comprar:hover {
+main section.main-superior article.bienvenida a.bot-comprar {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    width: 143px;
+    height: 50px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+    text-decoration: none;
+    color: rgb(239, 239, 239);
+    margin-right: 30px;
+}
+
+main section.main-superior article.bienvenida a.bot-comprar:hover {
     color: #44AFAA;
     background-color: white;
 }
 
-main section.main-superior article.bienvenida input.bot-contactar {
+main section.main-superior article.bienvenida a.bot-contactar {
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    width: 143px;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(239, 239, 239);
     border: 1px solid rgb(34, 33, 33);
     background-color: rgb(34, 33, 33);
 }
 
-main section.main-superior article.bienvenida input.bot-contactar:hover {
+main section.main-superior article.bienvenida a.bot-contactar:hover {
     color: rgb(34, 33, 33);
     background-color: white;
 }
@@ -155,8 +175,8 @@ main section.main-inferior a article.producto p:last-child {
         font-size: 1em;
     }
 
-    main section.main-superior article.bienvenida input {
-        margin: 10px;
+    main section.main-superior article.bienvenida article.botones{
+        justify-content: center;
     }
 
     main section.main-superior img {

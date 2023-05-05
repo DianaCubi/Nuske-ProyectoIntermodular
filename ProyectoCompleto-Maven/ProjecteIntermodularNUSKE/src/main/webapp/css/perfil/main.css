@@ -1,0 +1,111 @@
+main{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+main section.der-foto{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.der-foto figure{
+    width: 70%;
+}
+
+main section.der-foto figure img{
+    width: 100%;
+}
+
+main section.der-foto p{
+    text-align: center;
+}
+
+main section.der-foto p a{
+    text-decoration: none;
+    color: black;
+}
+
+main section.der-foto p a:hover{
+    text-decoration: underline;
+    text-decoration-color: #44AFAA;
+}
+
+main section.centro-inf{
+    width: 30%;
+    padding-left: 80px;
+}
+
+main section.centro-inf p{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 18px;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    display: flex;
+    justify-content: space-between;
+}
+
+main section.centro-inf p span:first-child{
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main section.centro-inf p span:last-child{
+    margin-bottom: 20px;
+}
+
+main section.izq-botones{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.izq-botones a{
+    width: 220px;
+    height: 40px;
+    margin: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: rgb(247, 247, 247);
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+}
+
+main section.izq-botones a#logOut{
+    border: 1px solid #8c3c3c;
+    background-color: #b94444;
+}
+
+
+main section.izq-botones a:hover{
+    color: #44AFAA;
+    background-color: rgb(247, 247, 247);
+    -webkit-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+}
+
+main section.izq-botones a#logOut:hover{
+    border: 1px solid #8c3c3c;
+    background-color: rgb(247, 247, 247);
+    color: #b94444;
+}
+
+main section.s-sinLogin{
+    height: 510px;
+    color: red;
+    display:flex;
+    align-items: center;
+}
+
+main section.s-sinLogin p.p-sinLogin{
+    color:red;
+}

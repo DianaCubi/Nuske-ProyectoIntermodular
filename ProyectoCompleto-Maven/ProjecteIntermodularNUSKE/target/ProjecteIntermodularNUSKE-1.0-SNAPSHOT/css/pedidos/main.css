@@ -1,0 +1,58 @@
+main{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+main h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+main article{
+    width: 90%;
+    height: 100px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(186, 186, 186);
+    border-top: 1px solid rgb(186, 186, 186);
+}
+
+main article form select{
+    width: 200px;
+}
+
+main label{
+    margin-top: 30px;
+    font-size: 20px;
+}   
+
+main select{
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    margin: 30px;
+}
+
+main article p.facturado{
+    color: rgb(191, 18, 18);
+}
+
+main article form input[type="submit"]{
+    padding: 5px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+    color: rgb(247, 247, 247);
+}
+
+main article form input[type="submit"]:hover{
+    color: #44AFAA;
+    background-color: rgb(247, 247, 247);
+}
+

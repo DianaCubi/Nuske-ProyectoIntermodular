@@ -1,9 +1,9 @@
 --TABLA NUSKE_USUARIO
-INSERT INTO NUSKE_USUARIO VALUES (1, 'dianasoriano.alu@iespacomolla.es', 'contraseña1234', 'Diana', 'Soriano Cubí', TO_DATE('15/07/1999','DD/MM/YYYY'), 644546576, './images/foto.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (1, 'dianasoriano.alu@iespacomolla.es', 'contrasena1234', 'Diana', 'Soriano Cubí', TO_DATE('15/07/1999','DD/MM/YYYY'), 644546576, './images/foto.jpeg', sysdate);
 INSERT INTO NUSKE_USUARIO VALUES (2, 'estelasoriano.alu@iespacomolla.es', 'password1234', 'Estela', 'Soriano Cubí', TO_DATE('20/05/1997','DD/MM/YYYY'), 644532121, './images/foto2.jpeg', sysdate);
 INSERT INTO NUSKE_USUARIO VALUES (3, 'yaizasoriano.alu@iespacomolla.es', 'yaiza0000', 'Yaiza', 'Soriano Cubí', TO_DATE('12/08/2001','DD/MM/YYYY'), 644532121, './images/foto3.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (4, 'ivanayuso.alu@iespacomolla.es', 'contraseñaSecreta', 'Iván', 'Ayuso Olivera', TO_DATE('24/04/1999','DD/MM/YYYY'), 644532121, './images/foto4.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (5, 'psflores79@gmail.com', 'maricarmenysusmu�ecos', 'Pedro', 'Sanchez Flores', TO_DATE('07/09/1979', 'DD/MM/YYYY'), 603765902, './images/foto5.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (4, 'ivanayuso.alu@iespacomolla.es', 'contrasenaSecreta', 'Iván', 'Ayuso Olivera', TO_DATE('24/04/1999','DD/MM/YYYY'), 644532121, './images/foto4.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (5, 'psflores79@gmail.com', 'maricarmenysusmunecos', 'Pedro', 'Sanchez Flores', TO_DATE('07/09/1979', 'DD/MM/YYYY'), 603765902, './images/foto5.jpeg', sysdate);
 INSERT INTO NUSKE_USUARIO VALUES (6, 'c_ledesma03@gmail.com', 'elpatriotaperdido03', 'Cristian', 'Ledesma Jimenez',  TO_DATE('07/11/1985', 'DD/MM/YYYY'), 552265002, './images/fotoc_ledesma.jpeg', sysdate);
 INSERT INTO NUSKE_USUARIO VALUES (7, 'lamejordelpueblo777@gmail.es', 'lasranascantanysaltan777', 'Silvia', 'Amorós Nosequé',  TO_DATE('19/10/1983', 'DD/MM/YYYY'), 652365985, './images/foto_lacubanaalegre.jpeg', sysdate);
 INSERT INTO NUSKE_USUARIO VALUES (8, 'mamertoeldelpueblo58@gmail.com', 'mamerto58pueblo', 'Ubaldo', 'Singanas Devivir',  TO_DATE('10/08/2000', 'DD/MM/YYYY'), 888596325, './images/foto_mamerto.jpeg', sysdate);

@@ -43,14 +43,14 @@ public class LogIn extends HttpServlet {
                 // Y tras esto redirigimos a "index.html"
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", usuario);
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.jsp");
             } else {
                 // Si el login no es correcto, enviamos un atributo "error" a true a "login.jsp" para que muestre el error.
                 request.setAttribute("error", true);
                 request.getRequestDispatcher("login.jsp").include(request, response);                
             }
         } catch (SQLException ex) {
-            System.out.println("ERROR SQL");
+            System.out.println(ex);
         }
     }
 

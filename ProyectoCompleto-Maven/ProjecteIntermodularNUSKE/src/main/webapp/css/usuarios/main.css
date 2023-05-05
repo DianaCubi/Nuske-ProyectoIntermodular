@@ -1,0 +1,46 @@
+main section.usuarios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+main section.usuarios article.usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 20%;
+    height: 200px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 20px;
+}
+
+main section.usuarios article.usuario p{
+    margin: 10px;
+    letter-spacing: 1px;
+}
+
+main section.usuarios article.usuario a{
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(247, 247, 247);
+    border-radius: 10px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+}
+
+main section.usuarios article.usuario a:hover{
+    color: #44AFAA;
+    background-color: rgb(247, 247, 247);
+    -webkit-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+}

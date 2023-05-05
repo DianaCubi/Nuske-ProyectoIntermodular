@@ -1,5 +1,9 @@
+<%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
+%>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -18,7 +22,7 @@
 
       
       <section class="titulo">
-        <a href="./index.html">
+        <a href="./index.jsp">
           <h3>NUSKË</h3>
         </a>
       </section>
@@ -53,10 +57,18 @@
           </li>
           <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
           <li class="inicio-sesion">
-            <a href="./login.jsp"><i class="bi bi-person-fill"></i></a>
+              <%
+                  if(usuarioSesion!=null){
+                  out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
+                  }
+                  else{
+                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i> Sign in</a>");
+                  }
+              %>
+            
           </li>
           <li class="cesta">
-            <a href="registro-mascota.html"><i class="bi bi-cart-fill"></i></a>
+            <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
           </li>
         </ul>
       </section>
@@ -73,8 +85,12 @@
             Nosotros haremos lo mismo.
           </p>
           <article class="botones">
-            <input type="button" value="Comprar ahora" class="bot-comprar" />
-            <input type="button" value="Contáctanos" class="bot-contactar" />
+            <a href="#productos" class="bot-comprar">Comprar ahora</a>
+            <a href="#" class="bot-contactar">Contáctanos</a>
+            <!--
+              <input type="button" value="Comprar ahora" class="bot-comprar" />
+              <input type="button" value="Contáctanos" class="bot-contactar" />
+            -->
           </article>
         </article>
         <article class="main-imagen">
@@ -87,8 +103,8 @@
         <hr />
         <h4>NUESTROS PRODUCTOS</h4>
         
-        <section class="productos">
-          <a href="./articulo.html">
+        <section class="productos" id="productos">
+          <a href="./articulo.jsp">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -103,11 +119,11 @@
                 deleniti quas quia? Pariatur asperiores culpa quis veniam
                 inventore dolor natus obcaecati ipsum.
               </p>
-              <p>4,99€</p>
+              <p>4,99?</p>
             </article>
           </article>
         </a>
-        <a href="./articulo.html">
+        <a href="./articulo.jsp">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -122,32 +138,12 @@
                 deleniti quas quia? Pariatur asperiores culpa quis veniam
                 inventore dolor natus obcaecati ipsum.
               </p>
-              <p>4,99€</p>
-            </article>
-          </article>
-        </a>
-
-        <a href="./articulo.html">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99€</p>
+              <p>4,99?</p>
             </article>
           </article>
         </a>
 
-        <a href="./articulo.html">
+        <a href="./articulo.jsp">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -162,12 +158,12 @@
                 deleniti quas quia? Pariatur asperiores culpa quis veniam
                 inventore dolor natus obcaecati ipsum.
               </p>
-              <p>4,99€</p>
+              <p>4,99?</p>
             </article>
           </article>
         </a>
 
-        <a href="./articulo.html">
+        <a href="./articulo.jsp">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -182,12 +178,12 @@
                 deleniti quas quia? Pariatur asperiores culpa quis veniam
                 inventore dolor natus obcaecati ipsum.
               </p>
-              <p>4,99€</p>
+              <p>4,99?</p>
             </article>
           </article>
         </a>
 
-        <a href="./articulo.html">
+        <a href="./articulo.jsp">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -202,7 +198,27 @@
                 deleniti quas quia? Pariatur asperiores culpa quis veniam
                 inventore dolor natus obcaecati ipsum.
               </p>
-              <p>4,99€</p>
+              <p>4,99?</p>
+            </article>
+          </article>
+        </a>
+
+        <a href="./articulo.jsp">
+          <article class="producto">
+            <article class="imagen">
+              <figure>
+                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
+              </figure>
+            </article>
+            <article class="texto-producto">
+              <p>Brekkies</p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
+                adipisci facilis, aut repellat consectetur veritatis sint libero
+                deleniti quas quia? Pariatur asperiores culpa quis veniam
+                inventore dolor natus obcaecati ipsum.
+              </p>
+              <p>4,99?</p>
             </article>
           </article>
         </a>
@@ -218,7 +234,7 @@
       <ul>
         <li><a href="#">Aviso legal</a></li>
         <li><a href="#">Preguntas frecuentes</a></li>
-        <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+        <li><a href="politica-privacidad.jsp">Política de privacidad</a></li>
       </ul>
       <ul>
         <li><a href="#">Condiciones generales</a></li>

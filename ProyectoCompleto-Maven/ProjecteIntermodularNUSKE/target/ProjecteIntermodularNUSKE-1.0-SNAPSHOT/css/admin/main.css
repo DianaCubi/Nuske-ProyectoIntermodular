@@ -1,0 +1,108 @@
+/*BOTONES*/
+main section.parte-superior{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section.parte-superior h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+main section.parte-superior a{
+    display: block;
+    text-align: center;
+    line-height: 77px;
+    font-size: 23px;
+    width: 307px;
+    height: 77px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: rgb(239, 239, 239);
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+}
+
+main section.parte-superior a:hover{
+    color: #44AFAA;
+    background-color: white;
+    -webkit-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 12px -8px rgba(0,0,0,0.75);
+}
+
+main section.main-inferior hr{
+    color: grey;
+    width: 80%;
+}
+
+
+/* PARTE INFERIOR */
+main section.main-inferior h4 {
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+main section.main-inferior section.productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*AQUI*/
+main section.main-inferior section.productos a {
+    width: 27%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+main section.main-inferior section.productos a article.producto {
+
+    border-radius: 20px;
+    border: 1px solid rgb(206, 206, 206);
+
+}
+
+main section.main-inferior a article.producto img {
+    height: 230px;
+}
+
+main section.main-inferior a article.producto:hover {
+    -webkit-box-shadow: 0px 9px 0px 0px #44AFAA, 0px -3px 10px 0px #A3A3A3;
+    box-shadow: 0px 9px 0px 0px #44AFAA, 0px -3px 10px 0px #A3A3A3;
+
+}
+
+
+main section.main-inferior a article.producto p:first-child {
+    font-size: 1.5em;
+    color: #44AFAA;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main section.main-inferior a article.producto p:nth-child(2) {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+main section.main-inferior a article.producto p:last-child {
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

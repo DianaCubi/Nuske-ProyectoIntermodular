@@ -1,0 +1,29 @@
+main{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+main h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+main article{
+    width: 90%;
+    height: 100px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgb(186, 186, 186);
+    border-top: 1px solid rgb(186, 186, 186);
+}
+
+a i.bi-trash{
+    color:#44AFAA;
+}

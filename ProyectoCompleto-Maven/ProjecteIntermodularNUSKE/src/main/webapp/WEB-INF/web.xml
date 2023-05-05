@@ -4,9 +4,17 @@
         <servlet-name>LogIn</servlet-name>
         <servlet-class>controlador.LogIn</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogOut</servlet-name>
+        <servlet-class>controlador.LogOut</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOut</servlet-name>
+        <url-pattern>/LogOut</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

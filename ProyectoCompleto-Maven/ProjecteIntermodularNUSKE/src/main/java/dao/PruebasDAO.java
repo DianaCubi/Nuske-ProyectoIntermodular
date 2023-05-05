@@ -41,6 +41,8 @@ public class PruebasDAO {
 //            Usuario u3 = new Usuario(100, "Sergio", "Colmena", LocalDate.now(), "sdsds@gmail.com", 0, "tretrerrt", LocalDateTime.now(), null);
 //            System.out.println(uDAO.existe(u3));
             
+//            Usuario usuario = new UsuarioDAO().getUsuario("estelasoriano.alu@iespacomolla.es", "password1234");
+//            System.out.println(usuario);
 
 //            *CLASE SOCIO*
             SocioDAO sDAO = new SocioDAO();
@@ -374,7 +376,7 @@ public class PruebasDAO {
 //            System.out.println(f);
             
             //--GETALL
-            ArrayList<Factura> facturas = fDAO.getAll();
+//            ArrayList<Factura> facturas = fDAO.getAll();
 //            for(Factura ff : facturas){
 //                System.out.println(ff);
 //            }
@@ -391,16 +393,16 @@ public class PruebasDAO {
 //            System.out.println(fDAO.existe(f3));
 
             //--AÑADIR Y ELIMINAR
-            Cliente clienteAux = cDAO.getByCodigo(3);
-            Direccion dirPago = dDAO.getByCodigo(1, clienteAux);
-            Pedido pedAux = pedDAO.getByCodigo(7);
-            Factura f3 = new Factura(4, LocalDateTime.now() ,pedAux, dirPago);
+//            Cliente clienteAux = cDAO.getByCodigo(3);
+//            Direccion dirPago = dDAO.getByCodigo(1, clienteAux);
+//            Pedido pedAux = pedDAO.getByCodigo(7);
+//            Factura f3 = new Factura(4, LocalDateTime.now() ,pedAux, dirPago);
 //            
 //            fDAO.anyadir(f3);
 //            fDAO.eliminar(f3);
 
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

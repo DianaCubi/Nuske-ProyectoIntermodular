@@ -98,7 +98,7 @@ public class UsuarioDAO  extends TablaDAO<Usuario> {
     }
     
     public Usuario getUsuario(String email, String contrasenya) throws SQLException{
-        String sentenciaSQL = "SELECT * FROM NUSKE_USUARIO WHERE E_MAIL LIKE '?' AND CONTRASENA LIKE '?'";
+        String sentenciaSQL = "SELECT * FROM NUSKE_USUARIO WHERE E_MAIL LIKE ? AND CONTRASENA LIKE ?";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setString(1, email);
         prepared.setString(2, contrasenya);
@@ -113,7 +113,6 @@ public class UsuarioDAO  extends TablaDAO<Usuario> {
             int telefono = resultSet.getInt("telefono");
             String foto = resultSet.getString("foto");
             LocalDateTime ultConexion = resultSet.getTimestamp("ULTIMA_CONEXION").toLocalDateTime();
-            
             return new Usuario(codigo, nombre, apellidos, fechaNacimiento, email, telefono, contrasenya, ultConexion, foto);
         }
         

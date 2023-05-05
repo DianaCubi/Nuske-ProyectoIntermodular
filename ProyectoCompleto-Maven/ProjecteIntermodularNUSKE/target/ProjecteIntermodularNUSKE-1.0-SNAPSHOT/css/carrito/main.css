@@ -1,0 +1,90 @@
+main form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+main form h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    border-bottom: 1px solid grey;
+}
+
+main form article{
+    width: 90%;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgb(186, 186, 186);
+    border-top: 1px solid rgb(186, 186, 186);
+}
+
+main form article p:first-child{
+    display: none;
+}
+
+main form article.titulos{
+    height: 50px;
+    padding: 0;
+}
+
+main form article img{
+    width:130px;
+    /*
+    height: 100%;
+    max-width: 150px;
+    */
+}
+
+main form article input{
+    width: 40px;
+    text-align: center;
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+a i.bi-trash{
+    color:rgb(175, 21, 21);
+}
+
+main form label{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+main form select{
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    margin: 30px;
+}
+
+main form p.precio-total{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+main form button{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+    color: rgb(247, 247, 247);
+    font-size: 20px;
+}
+
+main form button:hover{
+    color: #44AFAA;
+    background-color: rgb(247, 247, 247);
+}

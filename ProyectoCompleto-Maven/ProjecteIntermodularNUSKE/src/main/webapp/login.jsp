@@ -18,7 +18,7 @@
     
         
             <section class="titulo">
-                <a href="./index.html">
+                <a href="./index.jsp">
                   <h3>NUSKË</h3>
                 </a>
               </section>
@@ -53,10 +53,10 @@
             </li>
             <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
             <li class="inicio-sesion">
-              <a href="login.html"><i class="bi bi-person-fill"></i></a>
+              <a href="login.jsp"><i class="bi bi-person-fill">Usuario</i></a>
             </li>
             <li class="cesta">
-              <a href="registro-mascota.html"><i class="bi bi-cart-fill"></i></a>
+              <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
             </li>
           </ul>
         </section>
@@ -76,6 +76,11 @@
             <br>
             <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required><br><br>
             <input type="submit" value="Iniciar sesión">
+            <%
+                if (request.getAttribute("error") != null && (boolean) request.getAttribute("error")) {
+                    out.println("<p>(*) Nombre de correo o contraseña inválidos. Vuelve a intentarlo</p>");
+                }
+            %>
         </form>
         </section>
         <section class="separador"></section>
@@ -83,8 +88,8 @@
             <h3>¡Regístrate!</h3>
             <hr>
             <ul>
-                <li><a href="registro-socio.html">Registrar una empresa</a></li>
-                <li><a href="registro-responsable-cliente.html">Registrarme como responsable o cliente</a></li>
+                <li><a href="registro-socio.jsp">Registrar una empresa</a></li>
+                <li><a href="registro-responsable-cliente.jsp">Registrarme como responsable o cliente</a></li>
             </ul>
         </section>
       </main>
@@ -97,7 +102,7 @@
         <ul>
           <li><a href="#">Aviso legal</a></li>
           <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="politica-privacidad.html">Política de privacidad</a></li>
+          <li><a href="politica-privacidad.jsp">Política de privacidad</a></li>
         </ul>
         <ul>
           <li><a href="#">Condiciones generales</a></li>
