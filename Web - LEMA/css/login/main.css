@@ -27,7 +27,7 @@ main section.inicio-sesion form label{
 }
 
 main section.inicio-sesion form input{
-    width: 316px;
+    width: 90%;
     height: 43px;
     border: none;
     margin: 28px 0;
@@ -64,4 +64,66 @@ main section.registro ul li a:hover{
     text-decoration: underline;
     text-decoration-color: #44AFAA;
     text-decoration-thickness: 2px;
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue; */
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    main section h3{
+        font-size: 30px;
+    }
+
+    main section.inicio-sesion{
+        width: 50%;
+    }
+
+    main section.inicio-sesion form input{
+        margin-bottom: 17px;
+    }
+
+    main section.registro{
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    main{
+        /* background-color: red; */
+    }
+
+
+}
+
+@media (max-width: 576px){
+    main{
+        /* background-color: green; */
+    }
+
+}
+
+@media (max-width: 480px) {
+    main{
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+}
+
+@media (max-width: 360px) {
+    main{
+        /* background-color: rgb(205, 62, 109); */
+    }
+
 }

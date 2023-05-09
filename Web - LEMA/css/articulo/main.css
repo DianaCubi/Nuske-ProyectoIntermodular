@@ -15,9 +15,9 @@ main section.parte-superior section.imagen-producto figure img{
 
 main section.parte-superior section.info-producto{
     max-width: 60%;
-    padding-left: 225px;
     display: flex;
     flex-direction: column;
+    margin-left: 20%;
 }
 
 main section.parte-superior section.info-producto h2{
@@ -54,7 +54,7 @@ main section.parte-superior section.info-producto p.descripcion{
 }
 
 main section.parte-superior section.info-producto form input[type="number"]{
-    width: 430px;
+    width: 80%;
     height: 35px;
     border: none;
     border-bottom: 1px solid grey;
@@ -122,7 +122,7 @@ main section.parte-inferior h3{
 }
 
 main section.parte-inferior form {
-    width: 600px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     margin-left: 100px;
@@ -139,7 +139,7 @@ main section.parte-inferior form article.misma-linea article{
 }
 
 main section.parte-inferior form input, main section.parte-inferior form textarea, select{
-    width: 430px;
+    width: 60%;
     height: 35px;
     border: none;
     border-bottom: 1px solid grey;
@@ -166,11 +166,11 @@ main section.parte-inferior form input[type="submit"]:hover{
 section.comentarios{
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
+    margin-left: 20%;
 }
 
 section.comentarios article.comentario{
-    width: 900px;
+    width: 90%;
     border-bottom: 1px solid rgb(186, 186, 186);
 }
 
@@ -182,4 +182,77 @@ section.comentarios article.comentario p:first-child{
 }
 section.comentarios article.comentario p span{
     font-weight: bold;
+}
+
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue; */
+    }
+
+    main section.parte-superior{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section.parte-superior section.imagen-producto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    main section.parte-superior section.imagen-producto figure img{
+        width: 250px;
+    }
+
+    main section.parte-superior section.info-producto h2{
+        font-size: 2em;
+    }
+
+    section.comentarios{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    main{
+        /* background-color: red; */
+    }
+
+
+}
+
+@media (max-width: 576px){
+    main{
+        /* background-color: green; */
+    }
+
+    main section.parte-inferior article.escribir-coment form{
+        padding: 0;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+}
+
+@media (max-width: 360px) {
+    main{
+        /* background-color: rgb(205, 62, 109); */
+    }
+
 }

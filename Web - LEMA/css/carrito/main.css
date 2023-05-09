@@ -88,3 +88,47 @@ main form button:hover{
     color: #44AFAA;
     background-color: rgb(247, 247, 247);
 }
+
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        background-color: blue;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main{
+        background-color: red;
+    }
+
+
+}
+
+@media (max-width: 576px){
+    main{
+        background-color: green;
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        background-color: rgb(225, 171, 203);
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+        background-color: rgb(140, 32, 198);
+    }
+
+}
+
+@media (max-width: 360px) {
+    main{
+        background-color: rgb(205, 62, 109);
+    }
+
+}

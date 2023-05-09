@@ -62,7 +62,7 @@
                   out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
                   }
                   else{
-                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i> Sign in</a>");
+                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
                   }
               %>
             
