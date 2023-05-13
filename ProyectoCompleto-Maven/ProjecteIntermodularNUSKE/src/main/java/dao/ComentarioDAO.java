@@ -93,6 +93,30 @@ public class ComentarioDAO extends TablaDAO<Comentario>{
 
         return lista;
     }
+    
+        public ArrayList<Comentario> getAll(String codArticulo) throws SQLException {
+        ArrayList<Comentario> lista = new ArrayList<>();
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE CODIGO_ART LIKE ? ORDER BY NUM_COMENTARIO";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setString(1, codArticulo);
+        ResultSet resultSet = prepared.executeQuery();
+        
+        while (resultSet.next()) {
+            int codigo = resultSet.getInt("num_comentario");
+            Articulo articulo = new ArticuloDAO().getByCodigo(codArticulo);
+            String pseudonimo = resultSet.getString("pseudonimo");
+            int valoracion = resultSet.getInt("valoracion");
+            CalidadPrecio calidadPrecio = CalidadPrecio.valueOf(resultSet.getString("calidad_precio").toUpperCase());
+            LocalDateTime fecha = resultSet.getTimestamp("fecha").toLocalDateTime();
+            String descripcion = resultSet.getString("descripcion");
+            String ventajas = resultSet.getString("ventajas");
+            String inconvenientes = resultSet.getString("inconvenientes");
+            
+            lista.add(new Comentario(codigo, articulo, pseudonimo, valoracion, calidadPrecio, fecha, descripcion, ventajas, inconvenientes));
+        }
+
+        return lista;
+    }
 
     @Override
     public Comentario getByCodigo(int codigo) throws SQLException {

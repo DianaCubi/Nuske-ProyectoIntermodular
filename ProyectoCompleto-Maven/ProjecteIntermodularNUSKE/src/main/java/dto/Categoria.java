@@ -1,7 +1,11 @@
 package dto;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public enum Categoria {
-    PERROS, GATOS, ANIMALES_EXOTICOS;
+    PERROS, GATOS, EXOTICOS;
     
 //    @Override
 //    public String toString() {
@@ -18,4 +22,8 @@ public enum Categoria {
 //        
 //        return null;
 //    }
+    
+    public static ArrayList<Categoria> getAll(){
+         return new ArrayList<>(Arrays.asList(Categoria.values()));
+    }
 }

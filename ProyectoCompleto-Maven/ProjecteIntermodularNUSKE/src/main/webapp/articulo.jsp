@@ -1,5 +1,26 @@
+<%@page import="dao.ComentarioDAO"%>
+<%@page import="dto.Comentario"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.ArticuloDAO"%>
+<%@page import="dto.Articulo"%>
+<%@page import="dao.UsuarioDAO"%>
+<%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
+    usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+    
+    Articulo a = null;
+    if (request != null && request.getParameter("id") != null) {
+        String codigo = request.getParameter("id");
+        a = new ArticuloDAO().getByCodigo(codigo);
+        
+    }
+    
+    ArrayList<Comentario> comentarios = new ComentarioDAO().getAll(a.getCodigo());
+    
+%>
 <html lang="es">
 
 <head>
@@ -49,8 +70,16 @@
             </ul>
           </li>
           <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..." /></li>
-          <li class="inicio-sesion">
-            <a href="login.jsp"><i class="bi bi-person-fill">Usuario</i></a>
+                    <li class="inicio-sesion">
+              <%
+                  if(usuarioSesion!=null){
+                  out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
+                  }
+                  else{
+                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
+                  }
+              %>
+            
           </li>
           <li class="cesta">
             <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
@@ -61,6 +90,11 @@
   </header>
 
   <main>
+      <%
+      if (a==null){
+            out.println("<p style=\"height:60vh;display:flex;align-items:center;\">Error. Producto no encontrado</p>");
+      }else{
+      %>
     <section class="parte-superior">
       <section class="imagen-producto">
         <figure>
@@ -69,9 +103,9 @@
       </section>
       <section>
         <section class="info-producto">
-          <h2>Brekkies 3KG Adult</h2>
+          <h2><%= a.getNombre() %></h2>
           <article>
-            <p class="precio">4,99€</p>
+            <p class="precio"><%= a.getPvp() %> €</p>
             <div class="valoraciones">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
@@ -82,10 +116,7 @@
             </div>
           </article>
           <p class="descripcion">
-            Alimento completo para gatos - Marca Brekkies
-            Para gatos adultos y esterilizados - A partir de los 10 meses de edad.
-            Compuesto de pollo, verduras y vegetales.
-            Con elvoltorio cierra fácil.
+            <%= a.getDescripcion() %>
           </p>
           <form action="">
             <label for="cantidad">Selecciona cantidad</label><br>
@@ -146,30 +177,26 @@
       <article class="seccion-com">
         <h3>Comentarios</h3>
         <section class="comentarios">
+            <%
+            if(comentarios!=null){
+                for(Comentario c : comentarios){
+            %>
           <article class="comentario">
-            <p class="usuario">Federico12</p>
-            <p><span>Calidad: </span>Excelente [5]</p>
-            <p>"Excelente servicio y atención al cliente. Pedí un producto y me llegó en perfecto estado en el plazo que
-              me indicaron. Además, el personal fue muy amable y resolvió todas mis dudas de manera rápida y eficiente."
-            </p>
-            <p><span>Ventajas: </span>Buen servicio, envío rápido, atención al cliente amable y eficiente.</p>
-            <p><span>Inconvenientes: </span>Ninguna</p>
+            <p class="usuario"><%= c.getPseudonimoUsuario() %></p>
+            <p><span>Calidad: </span><%= c.getCalidadPrecio() %> [<%= c.getValoracion() %>]</p>
+            <p><%= c.getDescripcion() %></p>
+            <p><span>Ventajas: </span><%= c.getVentajas() %></p>
+            <p><span>Inconvenientes: </span><%= c.getInconvenientes() %></p>
           </article>
-
-          <article class="comentario">
-            <p>Anónimo</p>
-            <p><span>Calidad: </span>Muy buena [4]</p>
-            <p>"Me gusta mucho esta tienda online. Siempre encuentro lo que necesito a buen precio y la calidad de los
-              productos es muy buena. El envío también es rápido y nunca he tenido problemas. Lo recomiendo sin
-              dudarlo."</p>
-            <p><span>Ventajas: </span> Buena calidad de productos, buenos precios, envío rápido.</p>
-            <p><span>Inconvenientes: </span> Algunos productos pueden estar agotados.</p>
-          </article>
-
+          <%
+              }}
+          %>
         </section>
       </article>
     </section>
-
+    <%
+        }
+    %>
   </main>
 
   <footer>

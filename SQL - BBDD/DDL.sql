@@ -207,7 +207,7 @@ CATEGORIA varchar2 (100),
 SUBCATEGORIA varchar2 (100),
 foreign key (cod_admin) references nuske_administrador,
 constraint tipo_articulo check (tipo in ('CAMAS', 'CORREAS', 'TRANSPORTINES', 'COMEDEROS', 'PELOTAS', 'MORDEDORES', 'PELUCHES', 'JUGUETES_INTERACTIVOS', 'CHAMPUS', 'BOLSAS_DE_CALLE', 'ANTIPARASITOS', 'EMPAPADORES', 'PIENSOS', 'SNACKS', 'COMIDAS_HUMEDAS', 'OTROS')),
-constraint categoria_articulo check (categoria in ('PERROS', 'GATOS', 'ANIMALES_EXOTICOS')),
+constraint categoria_articulo check (categoria in ('PERROS', 'GATOS', 'EXOTICOS')),
 constraint subcategoria_articulo check(subcategoria in ('HOGAR', 'ENTRETENIMIENTO', 'SALUD_E_HIGIENE', 'ALIMENTACION'))
 );
 

@@ -1,8 +1,15 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="dto.Cliente"%>
+<%@page import="dao.UsuarioDAO"%>
+<%@page import="dto.Responsable"%>
+<%@page import="dto.Socio"%>
 <%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
+
+    usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
 %>
 <html lang="es">
     <head>
@@ -54,9 +61,17 @@
                             </ul>
                         </li>
                         <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
-                        <li class="inicio-sesion">
-                            <a href="login.jsp"><i class="bi bi-person-fill">Usuario</i></a>
-                        </li>
+                                  <li class="inicio-sesion">
+              <%
+                  if(usuarioSesion!=null){
+                  out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
+                  }
+                  else{
+                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
+                  }
+              %>
+            
+          </li>
                         <li class="cesta">
                             <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
                         </li>
@@ -72,64 +87,97 @@
 
             <section class="der-foto">
                 <figure>
-                    <img src="./img/profile-example.jpg" alt="Nombre de usuario">
+                    <img src="./img/<%= usuarioSesion.getFoto() %>" alt="Nombre de usuario">
                 </figure>
                 <p><a href="#">Editar perfil</a></p>
+                <%
+                   if(usuarioSesion instanceof Responsable){
+                %>
                 <p><a href="registro-mascota.jsp">Registrar mascota</a></p>
+                <%
+                    }
+                %>
             </section>
             <section class="centro-inf">
                 <p>
                     <span>Nombre</span>
-                    <span>Lola</span>
+                    <span><%= usuarioSesion.getNombre()%></span>
                 </p>
                 <p>
                     <span>Apellidos</span>
-                    <span>Carrión</span>
+                    <span><%= usuarioSesion.getApellidos()%></span>
                 </p>
                 <p>
                     <span>Email</span>
-                    <span>lola@gmail.com</span>
+                    <span><%= usuarioSesion.getEmail()%></span>
                 </p>
                 <p>
                     <span>Contraseña</span>
-                    <span>contraseña1234</span>
+                    <span>**********</span>
                 </p>
                 <p>
                     <span>Fecha de nacimiento</span>
-                    <span>12/06/1994</span>
+                    <span><%= usuarioSesion.getFechaNacimiento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) %></span>
                 </p>
                 <p>
                     <span>Teléfono</span>
-                    <span>648512563</span>
+                    <span><%= usuarioSesion.getTelefono() %></span>
                 </p>
+                <%
+                    if (usuarioSesion instanceof Responsable) {
+                %>
                 <p>
                     <span>DNI</span>
-                    <span>45871235D</span>
+                    <span><%= ((Responsable) usuarioSesion).getDNI()%></span>
                 </p>
+                <%
+                } else if (usuarioSesion instanceof Cliente) {
+                %>
+                <p>
+                    <span>DNI</span>
+                    <span><%= ((Cliente) usuarioSesion).getDNI()%></span>
+                </p>
+                <%
+                    }
+
+
+                    if(usuarioSesion instanceof Socio){
+                %>
                 <p>
                     <span>Correo de empresa</span>
-                    <span>veterinariaSL@gmail.com</span>
+                    <span><%= ((Socio)usuarioSesion).getCorreoEmpresa() %></span>
                 </p>
                 <p>
                     <span>Nombre de empresa</span>
-                    <span>Veterinarias S.L.</span>
+                    <span><%= ((Socio)usuarioSesion).getNombreEntidad() %></span>
                 </p>
                 <p>
                     <span>Teléfono de empresa</span>
-                    <span>641245325</span> 
+                    <span><%= ((Socio)usuarioSesion).getTelefonoEntidad() %></span> 
                 </p>
+                
+                <%
+                    }
+                %>
             </section>
             <section class="izq-botones">
                 <a href="./listas.jsp">Listas</a>
                 <a href="./pedidos.jsp">Pedidos</a>
                 <a href="./facturas.jsp">Facturas</a>
+                <%
+                   if(usuarioSesion instanceof Responsable){
+                %>
                 <a href="#">Mascotas</a>
+                
+                <%
+                    }
+                %>
                 <a href="LogOut" id="logOut">Cerrar sesión</a>
             </section>
             <%
             } else {
             %>
-            <section class="s-sinLogin" style="height:55vh;display:flex;align-items:center;">
+            <section class="s-sinLogin" style="height:60vh;display:flex;align-items:center;">
                 <p class="p-sinLogin">Sabía que ibas a intentar esto, José Ramón</p>
             </section>
 

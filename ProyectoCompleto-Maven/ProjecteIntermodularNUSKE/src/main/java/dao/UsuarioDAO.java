@@ -119,4 +119,22 @@ public class UsuarioDAO  extends TablaDAO<Usuario> {
         return null;
     }
     
+    public static Usuario tipoUsuario(int codigo) throws SQLException{
+        if(new ClienteDAO().getByCodigo(codigo)!= null){
+            return new ClienteDAO().getByCodigo(codigo);
+        }
+        else if(new SocioDAO().getByCodigo(codigo)!=null){
+            return new SocioDAO().getByCodigo(codigo);
+        }
+        else if(new ResponsableDAO().getByCodigo(codigo)!= null){
+            return new ResponsableDAO().getByCodigo(codigo);
+        }
+        else if(new AdministradorDAO().getByCodigo(codigo)!=null){
+            return new AdministradorDAO().getByCodigo(codigo);
+        }
+        else{
+            return null;
+        }
+    }
+    
 }

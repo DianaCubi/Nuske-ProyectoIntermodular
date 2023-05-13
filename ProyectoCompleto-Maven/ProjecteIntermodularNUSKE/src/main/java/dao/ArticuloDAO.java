@@ -86,6 +86,39 @@ public class ArticuloDAO extends TablaDAO<Articulo>{
 
         return lista;
     }
+    
+    public ArrayList<Articulo> getByCategoria(String cat) throws SQLException {
+        ArrayList<Articulo> lista = new ArrayList<>();
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE CATEGORIA LIKE ? ORDER BY codigo";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setString(1, cat);
+        ResultSet resultSet = prepared.executeQuery();
+
+        while (resultSet.next()) {
+            String codigo = resultSet.getString("codigo");
+            String foto = resultSet.getString("foto");
+            String nombre = resultSet.getString("nombre");
+            String descripcion = resultSet.getString("descripcion");
+            int stockActual = resultSet.getInt("stock_actual");
+            int stockMinimo = resultSet.getInt("stock_minimo");
+            int unidades = resultSet.getInt("unidades");
+            int iva = resultSet.getInt("iva");
+            int pvp = resultSet.getInt("pvp");
+            LocalDateTime fechaCreacion = resultSet.getTimestamp("fecha_creacion").toLocalDateTime();
+            Administrador administrador = new AdministradorDAO().getByCodigo(resultSet.getInt("cod_admin"));
+            TipoArticulo tipo = TipoArticulo.valueOf(resultSet.getString("tipo").toUpperCase());
+            Categoria categoria = Categoria.valueOf(resultSet.getString("categoria").toUpperCase());
+            Subcategoria subcategoria = Subcategoria.valueOf(resultSet.getString("subcategoria").toUpperCase());
+
+            ArrayList<Proveedor> provedoores = getProveedores(codigo);
+            HashMap<Socio, String> socioRecomendaciones = getSocioRecom(codigo);
+            HashMap<Socio, Double> socioVentas = getSocioVentas(codigo);         
+
+            lista.add(new Articulo(codigo, foto, nombre, descripcion, categoria, subcategoria, tipo, stockActual, stockMinimo, unidades, iva, pvp, fechaCreacion, administrador, provedoores, socioRecomendaciones, socioVentas));
+        }
+
+        return lista;
+    }
 
     @Override
     public Articulo getByCodigo(int codigo) throws SQLException {

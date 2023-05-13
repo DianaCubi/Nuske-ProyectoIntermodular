@@ -1,8 +1,27 @@
+<%@page import="dto.Categoria"%>
+<%@page import="dao.ArticuloDAO"%>
+<%@page import="dto.Articulo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.UsuarioDAO"%>
 <%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
+
+    usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+    
+    ArrayList<Categoria> categorias = Categoria.getAll();
+    
+    ArrayList<Articulo> articulos = null;
+    
+    if(request.getParameter("cat") != null){
+        articulos = new ArticuloDAO().getByCategoria(request.getParameter("cat"));
+    }
+    else{
+        articulos = new ArticuloDAO().getAll();
+    }
+    
 %>
 <html lang="es">
   <head>
@@ -28,35 +47,25 @@
       </section>
       <section class="navegacion">
         <ul>
+            <%
+            for(Categoria c : categorias){
+            %>
           <li class="perro">
-            <a href="#">Perros</a>
-            <ul class="subcategoria">
-              <li><a href="#">Hogar</a></li>
-              <li><a href="#">Entretenimiento</a></li>
-              <li><a href="#">Alimentación</a></li>
-              <li><a href="#">Salud e higiene</a></li>
-            </ul>
+              <a href="index.jsp?cat=<%= c.toString() %>"><%= c.toString() %></a>
           </li>
-          <li class="gato">
-            <a href="#">Gatos</a>
-            <ul class="subcategoria">
-                <li><a href="#">Hogar</a></li>
-                <li><a href="#">Entretenimiento</a></li>
-                <li><a href="#">Alimentación</a></li>
-                <li><a href="#">Salud e higiene</a></li>
-            </ul>
+          <%
+              }
+          %>
+
+<!--          <li class="gato">
+            <a href="index.jsp?id=<%= Categoria.GATOS %>">Gatos</a>
           </li>
           <li class="exotico">
-            <a href="#">Exóticos</a>
-            <ul class="subcategoria">
-                <li><a href="#">Hogar</a></li>
-                <li><a href="#">Entretenimiento</a></li>
-                <li><a href="#">Alimentación</a></li>
-                <li><a href="#">Salud e higiene</a></li>
-            </ul>
-          </li>
+            <a href="index.jsp?id=<%= Categoria.EXOTICOS %>">Exóticos</a>
+          </li>-->
           <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
           <li class="inicio-sesion">
+              
               <%
                   if(usuarioSesion!=null){
                   out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
@@ -104,7 +113,10 @@
         <h4>NUESTROS PRODUCTOS</h4>
         
         <section class="productos" id="productos">
-          <a href="./articulo.jsp">
+            <%
+                for(Articulo a : articulos){
+            %>
+          <a href="./articulo.jsp?id=<%= a.getCodigo() %>">
           <article class="producto">
             <article class="imagen">
               <figure>
@@ -112,116 +124,17 @@
               </figure>
             </article>
             <article class="texto-producto">
-              <p>Brekkies</p>
+              <p><%= a.getNombre() %></p>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
+                  <%= a.getDescripcion() %>
               </p>
-              <p>4,99?</p>
+              <p><%= a.getPvp() %> €</p>
             </article>
           </article>
-        </a>
-        <a href="./articulo.jsp">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99?</p>
-            </article>
-          </article>
-        </a>
-
-        <a href="./articulo.jsp">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99?</p>
-            </article>
-          </article>
-        </a>
-
-        <a href="./articulo.jsp">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99?</p>
-            </article>
-          </article>
-        </a>
-
-        <a href="./articulo.jsp">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99?</p>
-            </article>
-          </article>
-        </a>
-
-        <a href="./articulo.jsp">
-          <article class="producto">
-            <article class="imagen">
-              <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
-              </figure>
-            </article>
-            <article class="texto-producto">
-              <p>Brekkies</p>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                adipisci facilis, aut repellat consectetur veritatis sint libero
-                deleniti quas quia? Pariatur asperiores culpa quis veniam
-                inventore dolor natus obcaecati ipsum.
-              </p>
-              <p>4,99?</p>
-            </article>
-          </article>
-        </a>
+            </a>
+        <%
+            }
+        %>
         </section>
       </section>
     </main>

@@ -1,5 +1,13 @@
+<%@page import="dao.UsuarioDAO"%>
+<%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
+    
+
+    usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+%>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -52,9 +60,17 @@
               </ul>
             </li>
             <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
-            <li class="inicio-sesion">
-              <a href="login.jsp"><i class="bi bi-person-fill">Usuario</i></a>
-            </li>
+                      <li class="inicio-sesion">
+              <%
+                  if(usuarioSesion!=null){
+                  out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
+                  }
+                  else{
+                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
+                  }
+              %>
+            
+          </li>
             <li class="cesta">
               <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
             </li>
