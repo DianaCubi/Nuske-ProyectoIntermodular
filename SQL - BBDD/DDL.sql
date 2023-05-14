@@ -193,7 +193,7 @@ foreign key (cod_pedido) references nuske_pedido
 create table NUSKE_ARTICULO (
 CODIGO varchar2 (10) primary key, 
 FOTO varchar2(50), 
-NOMBRE varchar2 (20),
+NOMBRE varchar2 (40),
 DESCRIPCION varchar2 (150),
 STOCK_ACTUAL number (4),
 STOCK_MINIMO number (3),
@@ -207,7 +207,7 @@ CATEGORIA varchar2 (100),
 SUBCATEGORIA varchar2 (100),
 foreign key (cod_admin) references nuske_administrador,
 constraint tipo_articulo check (tipo in ('CAMAS', 'CORREAS', 'TRANSPORTINES', 'COMEDEROS', 'PELOTAS', 'MORDEDORES', 'PELUCHES', 'JUGUETES_INTERACTIVOS', 'CHAMPUS', 'BOLSAS_DE_CALLE', 'ANTIPARASITOS', 'EMPAPADORES', 'PIENSOS', 'SNACKS', 'COMIDAS_HUMEDAS', 'OTROS')),
-constraint categoria_articulo check (categoria in ('PERROS', 'GATOS', 'EXOTICOS')),
+constraint categoria_articulo check (categoria in ('PERROS', 'GATOS', 'EXÓTICOS')),
 constraint subcategoria_articulo check(subcategoria in ('HOGAR', 'ENTRETENIMIENTO', 'SALUD_E_HIGIENE', 'ALIMENTACION'))
 );
 

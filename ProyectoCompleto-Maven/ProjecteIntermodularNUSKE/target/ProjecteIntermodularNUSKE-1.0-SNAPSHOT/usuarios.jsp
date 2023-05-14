@@ -1,12 +1,13 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
     Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
-    
-
     usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+    
+    ArrayList<Usuario> usuariosRegistrados = new UsuarioDAO().getAll();
 %>
 <html lang="es">
   <head>
@@ -81,66 +82,18 @@
     </header>
     <main>
         <section class="usuarios">
+            
+            <%
+                for(Usuario u : usuariosRegistrados){
+            %>
             <article class="usuario">
-                <p class="codigo">Nº 1</p>
-                <p class="email">usuario@gmail.com</p>
+                <p class="codigo">Código usuario: <%= u.getCodigo() %></p>
+                <p class="email"><%= u.getEmail() %></p>
                 <a href="#">Editar</a>
             </article>
-            <article class="usuario">
-                <p>Nº 2</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 3</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 4</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p class="codigo">Nº 1</p>
-                <p class="email">usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 2</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 3</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 4</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p class="codigo">Nº 1</p>
-                <p class="email">usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 2</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 3</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
-            <article class="usuario">
-                <p>Nº 4</p>
-                <p>usuario@gmail.com</p>
-                <a href="#">Editar</a>
-            </article>
+            <%
+                }
+            %>
         </section>
     </main>
     <footer>

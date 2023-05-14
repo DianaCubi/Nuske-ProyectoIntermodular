@@ -93,6 +93,7 @@ public class ListaDAO extends TablaDAO<Lista> {
             ArrayList<Articulo> articulos = getArticulos(nombre);
             lista.add(new Lista(nombre, creadorLista, articulos));
         }
+        
         return lista;
     }
 

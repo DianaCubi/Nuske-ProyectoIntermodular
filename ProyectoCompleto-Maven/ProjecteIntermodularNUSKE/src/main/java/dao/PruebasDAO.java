@@ -315,6 +315,10 @@ public class PruebasDAO {
 //            for(Cesta cestac : cestas){
 //                System.out.println(cestac);
 //            }
+
+            //--GETBYCLIENTE
+//            Cesta cesta5 = cestaDAO.getByCliente(3);
+//            System.out.println(cesta5);
             
             //--EXISTE
 //            Cesta cesta2 = cestaDAO.getByCodigo(1);
@@ -380,6 +384,13 @@ public class PruebasDAO {
 //            for(Factura ff : facturas){
 //                System.out.println(ff);
 //            }
+            
+            //--GETBYUSUARIO
+//            ArrayList<Factura> facturas4 = fDAO.getByUsuario(3);
+//            for(Factura ff : facturas4){
+//                System.out.println(ff);
+//            }
+            
             
             //--EXISTE
 //            Factura f2 = fDAO.getByCodigo(3);

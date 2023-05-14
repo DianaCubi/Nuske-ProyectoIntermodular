@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum Categoria {
-    PERROS, GATOS, EXOTICOS;
+    PERROS, GATOS, EXÓTICOS;
     
 //    @Override
 //    public String toString() {

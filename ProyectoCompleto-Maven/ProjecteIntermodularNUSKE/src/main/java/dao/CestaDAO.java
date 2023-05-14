@@ -43,6 +43,7 @@ public class CestaDAO extends TablaDAO<Cesta> {
         prepared.setInt(2, c.getCreadorCesta().getCodigo());
         int resultado = prepared.executeUpdate();
         setLineas(lineas);
+        
         return resultado;
     }
     
@@ -101,6 +102,7 @@ public class CestaDAO extends TablaDAO<Cesta> {
             Cliente cliente = new ClienteDAO().getByCodigo(resultSet.getInt("cod_cliente"));
             lista.add(new Cesta(codigo, cliente));
         }
+        
         return lista;
     }
 
@@ -118,11 +120,24 @@ public class CestaDAO extends TablaDAO<Cesta> {
         return null;
     }
     
+    public Cesta getByCliente(int codCliente) throws SQLException {
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_CLIENTE=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, codCliente);
+        ResultSet resultSet = prepared.executeQuery();
+        while (resultSet.next()) {
+            int codigo = resultSet.getInt("codigo");
+            Cliente cliente = new ClienteDAO().getByCodigo(resultSet.getInt("cod_cliente"));
+            return new Cesta(codigo, cliente);
+        }
 
+        return null;
+    }
+    
     public ArrayList<LineaArticulo> getLineas(int codigo) throws SQLException{
         LineaArticuloDAO lineaArticuloDAO = new LineaArticuloDAO();
         ArrayList<LineaArticulo> lineaArticulos = new ArrayList<>();
-        String sentenciaSQL = "SELECT * FROM NUSKE_ARTICULO_EN_CESTA WHERE COD_CESTA = ?";
+        String sentenciaSQL = "SELECT * FROM NUSKE_ARTICULO_EN_CESTA WHERE CODIGO_CESTA = ?";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setInt(1, codigo);
         ResultSet resultSet = prepared.executeQuery();
@@ -132,5 +147,14 @@ public class CestaDAO extends TablaDAO<Cesta> {
             lineaArticulos.add(lineaArticulo);
         }
         return lineaArticulos;
+    }
+    
+    public double calcularTotal(Cesta c) throws SQLException{
+        ArrayList<LineaArticulo> lineaArticulos = getLineas(c.getCodigo());
+        double total=0;
+        for(LineaArticulo l : lineaArticulos){
+            total+=l.calcularSubtotalLinea();
+        }
+        return total;
     }
 }

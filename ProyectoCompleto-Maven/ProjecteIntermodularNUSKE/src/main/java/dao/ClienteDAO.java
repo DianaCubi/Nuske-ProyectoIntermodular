@@ -60,6 +60,7 @@ public class ClienteDAO extends TablaDAO<Cliente> {
             String dni = resultSet.getString("dni");
             lista.add(new Cliente(usuario, dni));
         }
+        
         return lista;
     }
 

@@ -1,15 +1,15 @@
 --TABLA NUSKE_USUARIO
-INSERT INTO NUSKE_USUARIO VALUES (1, 'dianasoriano.alu@iespacomolla.es', 'contrasena1234', 'Diana', 'Soriano Cubí', TO_DATE('15/07/1999','DD/MM/YYYY'), 644546576, 'diana.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (2, 'estelasoriano.alu@iespacomolla.es', 'password1234', 'Estela', 'Soriano Cubí', TO_DATE('20/05/1997','DD/MM/YYYY'), 644532121, 'estela.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (3, 'yaizasoriano.alu@iespacomolla.es', 'yaiza0000', 'Yaiza', 'Soriano Cubí', TO_DATE('12/08/2001','DD/MM/YYYY'), 644532121, 'yaiza.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (4, 'ivanayuso.alu@iespacomolla.es', 'contrasenaSecreta', 'Iván', 'Ayuso Olivera', TO_DATE('24/04/1999','DD/MM/YYYY'), 644532121, 'ivan.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (5, 'psflores79@gmail.com', 'maricarmenysusmunecos', 'Pedro', 'Sanchez Flores', TO_DATE('07/09/1979', 'DD/MM/YYYY'), 603765902, 'pedro.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (6, 'c_ledesma03@gmail.com', 'elpatriotaperdido03', 'Cristian', 'Ledesma Jimenez',  TO_DATE('07/11/1985', 'DD/MM/YYYY'), 552265002, 'cristian.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (7, 'lamejordelpueblo777@gmail.es', 'lasranascantanysaltan777', 'Silvia', 'Amorós Nosequé',  TO_DATE('19/10/1983', 'DD/MM/YYYY'), 652365985, 'silvia.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (8, 'mamertoeldelpueblo58@gmail.com', 'mamerto58pueblo', 'Ubaldo', 'Singanas Devivir',  TO_DATE('10/08/2000', 'DD/MM/YYYY'), 888596325, 'ubaldo.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (9, 'yanoseniloquehago789@gmail.com', 'cuatrolobitostienelaboa', 'Robert', 'Castro Elcantante', TO_DATE('01/03/1977', 'DD/MM/YYYY'), 2255369, 'robert.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (10, 'jpesemarrano@gmail.es', 'meencantalacomidadecerditos25', 'Juan Pablo', 'Serrano Marrano', TO_DATE('15/06/1988', 'DD/MM/YYYY'), 604485922, 'jp.jpeg', sysdate);
-INSERT INTO NUSKE_USUARIO VALUES (11, 'elmojamedespues5@gmail.com', 'seloquesoy55yloquevargo', 'Mohadmed', 'Wassiwassi Mahunche', TO_DATE('07/05/1985', 'DD/MM/YYYY'), 603885925, 'mohadmed.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (1, 'dianasoriano.alu@iespacomolla.es', 'ninguna', 'Diana', 'Soriano Cubí', TO_DATE('15/07/1999','DD/MM/YYYY'), 644546576, 'diana.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (2, 'estelasoriano.alu@iespacomolla.es', 'ninguna', 'Estela', 'Soriano Cubí', TO_DATE('20/05/1997','DD/MM/YYYY'), 644532121, 'estela.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (3, 'yaizasoriano.alu@iespacomolla.es', 'ninguna', 'Yaiza', 'Soriano Cubí', TO_DATE('12/08/2001','DD/MM/YYYY'), 644532121, 'yaiza.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (4, 'ivanayuso.alu@iespacomolla.es', 'ninguna', 'Iván', 'Ayuso Olivera', TO_DATE('24/04/1999','DD/MM/YYYY'), 644532121, 'ivan.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (5, 'psflores79@gmail.com', 'ninguna', 'Pedro', 'Sanchez Flores', TO_DATE('07/09/1979', 'DD/MM/YYYY'), 603765902, 'pedro.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (6, 'c_ledesma03@gmail.com', 'ninguna', 'Cristian', 'Ledesma Jimenez',  TO_DATE('07/11/1985', 'DD/MM/YYYY'), 552265002, 'cristian.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (7, 'lamejordelpueblo777@gmail.es', 'ninguna', 'Silvia', 'Amorós Nosequé',  TO_DATE('19/10/1983', 'DD/MM/YYYY'), 652365985, 'silvia.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (8, 'mamertoeldelpueblo58@gmail.com', 'ninguna', 'Ubaldo', 'Singanas Devivir',  TO_DATE('10/08/2000', 'DD/MM/YYYY'), 888596325, 'ubaldo.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (9, 'yanoseniloquehago789@gmail.com', 'ninguna', 'Robert', 'Castro Elcantante', TO_DATE('01/03/1977', 'DD/MM/YYYY'), 2255369, 'robert.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (10, 'jpesemarrano@gmail.es', 'ninguna', 'Juan Pablo', 'Serrano Marrano', TO_DATE('15/06/1988', 'DD/MM/YYYY'), 604485922, 'jp.jpeg', sysdate);
+INSERT INTO NUSKE_USUARIO VALUES (11, 'elmojamedespues5@gmail.com', 'ninguna', 'Mohadmed', 'Wassiwassi Mahunche', TO_DATE('07/05/1985', 'DD/MM/YYYY'), 603885925, 'mohadmed.jpeg', sysdate);
 
 --TABLA NUSKE_ADMINISTRADOR
 INSERT INTO NUSKE_ADMINISTRADOR VALUES (1);
@@ -88,18 +88,25 @@ INSERT INTO NUSKE_FACTURA VALUES (1, sysdate, 1, 1, 3);
 INSERT INTO NUSKE_FACTURA VALUES (2, sysdate, 2, 2, 7);
 
 --TABLA NUSKE_ARTICULO
-INSERT INTO NUSKE_ARTICULO VALUES (1, './images/articulo.jpeg', 'Cama de perro', 'Para perros medianos. Cama marrón', 156, 100, 3, 21, 25, TO_DATE('14/02/2023','DD/MM/YYYY'), 1, 'CAMAS', 'PERROS', 'HOGAR');
-INSERT INTO NUSKE_ARTICULO VALUES (2, './images/articulo2.jpeg', 'Champú de gato', 'Champú anticaspa', 342, 100, 65, 21, 14, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'CHAMPUS', 'GATOS', 'SALUD_E_HIGIENE');
-INSERT INTO NUSKE_ARTICULO VALUES (3, './images/articulo3.jpeg', 'Juguete para gato', 'Juguete interactivo con forma de rata', 211, 100, 73, 21, 20.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'JUGUETES_INTERACTIVOS', 'GATOS', 'ENTRETENIMIENTO');
-INSERT INTO NUSKE_ARTICULO VALUES (4, './images/articulo4.jpeg', 'Comedero pajaros', 'Comedero jaula para pajaros pequeños', 250, 50, 10, 21, 17.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMEDEROS', 'EXOTICOS', 'HOGAR');
-INSERT INTO NUSKE_ARTICULO VALUES (5, './images/articulo5.jpeg', 'Transportín de gato', 'Transportín profesional para gatos', 100, 50, 5, 21, 49.9, TO_DATE('18/01/2023','DD/MM/YYYY'), 5, 'TRANSPORTINES', 'GATOS', 'HOGAR');
-INSERT INTO NUSKE_ARTICULO VALUES (6, './images/articulo6.jpeg', 'Pelota para perros', 'Pelota de rugbi para perros', 500, 100, 225, 21, 9.9, TO_DATE('01/02/2023','DD/MM/YYYY'), 5, 'PELOTAS', 'PERROS', 'ENTRETENIMIENTO');
-INSERT INTO NUSKE_ARTICULO VALUES (7, './images/articulo7.jpeg', 'Comida para gatos', 'Comida húmeda para gatos pequeños', 250, 50, 12, 21, 2.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMIDAS_HUMEDAS', 'GATOS', 'ALIMENTACION');
-INSERT INTO NUSKE_ARTICULO VALUES (8, './images/articulo8.jpeg', 'Comida para perros', 'Comida en forma de estrella para perros', 100, 50, 5, 21, 12.5, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'PERROS', 'ALIMENTACION');
-INSERT INTO NUSKE_ARTICULO VALUES (9, './images/articulo9.jpeg', 'Alpiste para pájaros', 'Alpiste para Agapornis y Ninfas', 250, 50, 10, 21, 5.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'EXOTICOS', 'ALIMENTACION');
-INSERT INTO NUSKE_ARTICULO VALUES (10, './images/articul104.jpeg', 'Corta uñas gato', 'Cortauñas para gatos', 50, 10, 5, 21, 19.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'OTROS', 'GATOS', 'SALUD_E_HIGIENE');
+INSERT INTO NUSKE_ARTICULO VALUES (1, 'articulo.png', 'Cama de perro', 'Para perros medianos. Cama marrón', 156, 100, 3, 21, 25, TO_DATE('14/02/2023','DD/MM/YYYY'), 1, 'CAMAS', 'PERROS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (2, 'articulo2.png', 'Champú de gato', 'Champú anticaspa para pieles sensibles', 342, 100, 65, 21, 14, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'CHAMPUS', 'GATOS', 'SALUD_E_HIGIENE');
+INSERT INTO NUSKE_ARTICULO VALUES (3, 'articulo3.png', 'Juguete para gato', 'Juguete interactivo con forma de rata con mando', 211, 100, 73, 21, 20.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'JUGUETES_INTERACTIVOS', 'GATOS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (4, 'articulo4.png', 'Comedero pajaros', 'Comedero jaula para pajaros pequeños', 250, 50, 10, 21, 17.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMEDEROS', 'EXÓTICOS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (5, 'articulo5.png', 'Transportín de gato', 'Transportín profesional para gatos', 100, 50, 5, 21, 49.9, TO_DATE('18/01/2023','DD/MM/YYYY'), 5, 'TRANSPORTINES', 'GATOS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (6, 'articulo6.png', 'Pelota para perros', 'Pelota de rugbi para perros', 500, 100, 225, 21, 9.9, TO_DATE('01/02/2023','DD/MM/YYYY'), 5, 'PELOTAS', 'PERROS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (7, 'articulo7.png', 'Comida húmeda gourmet gold con pollo', 'Comida húmeda para gatos pequeños', 250, 50, 12, 21, 2.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMIDAS_HUMEDAS', 'GATOS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (8, 'articulo8.png', 'Comida para perros adultos marca Ultima', 'Comida en forma de estrella para perros', 100, 50, 5, 21, 12.5, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'PERROS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (9, 'articulo9.png', 'Alpiste para pájaros High Quality', 'Alpiste para Agapornis y Ninfas', 250, 50, 10, 21, 5.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'EXÓTICOS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (10, 'articulo10.png', 'Corta uñas gato', 'Cortauñas para gatos', 50, 10, 5, 21, 19.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'OTROS', 'GATOS', 'SALUD_E_HIGIENE');
 
+INSERT INTO NUSKE_ARTICULO VALUES (11, 'articulo11.png', 'Collar para perros', 'Collar negro con colgante en forma de hueso para perro', 80, 20, 1, 21, 15.99, TO_DATE('18/03/2023','DD/MM/YYYY'), 1, 'CORREAS', 'PERROS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (12, 'articulo12.png', 'Terrario para iguana', 'Terrario para iguanas y reptiles decorado con plantas y agujeros para la incorporación de comedero extraíble', 15, 5, 1, 21, 49.99, TO_DATE('21/03/2023','DD/MM/YYYY'), 1, 'CAMAS', 'EXÓTICOS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (13, 'articulo13.png', 'Empapador para cachorro', 'Empapador para cachorros pequeños o para perros con problemas renales.', 200, 50, 30, 21, 8.99, TO_DATE('25/04/2023','DD/MM/YYYY'), 5, 'EMPAPADORES', 'PERROS', 'SALUD_E_HIGIENE');
+INSERT INTO NUSKE_ARTICULO VALUES (14, 'articulo14.png', 'Transportín para hurón', 'Transportín para hurones y animales pequeños', 10, 2, 1, 21, 29.99, TO_DATE('30/04/2023','DD/MM/YYYY'), 1, 'TRANSPORTINES', 'EXÓTICOS', 'ENTRETENIMIENTO');
 
+INSERT INTO NUSKE_ARTICULO VALUES (15, 'articulo15.png', 'Pienso para perros adultos[20 KG]', '20kg de pienso seco para perros adultos de todas las razas con 45% de carne', 100, 20, 1, 21, 39.99, TO_DATE('05/05/2023','DD/MM/YYYY'), 5, 'PIENSOS', 'PERROS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (16, 'articulo17.png', 'Pienso para gatos esterilizados', 'Pienso seco para gatos adultos y esterilizados. Marca Ultima', 80, 10, 1, 21, 29.99, TO_DATE('15/05/2023','DD/MM/YYYY'), 5, 'PIENSOS', 'GATOS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (17, 'articulo19.png', 'Pienso para loros Tropican', 'Pienso seco para loros y aves exóticas', 40, 10, 1, 21, 24.99, TO_DATE('25/05/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'EXÓTICOS', 'ALIMENTACION');
 
 --TABLA NUSKE_ARTICULO_EN_CESTA
 INSERT INTO NUSKE_ARTICULO_EN_CESTA VALUES (1, 1, 3, 25);

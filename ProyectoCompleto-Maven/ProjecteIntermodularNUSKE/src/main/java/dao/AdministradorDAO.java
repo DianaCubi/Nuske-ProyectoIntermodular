@@ -59,6 +59,7 @@ public class AdministradorDAO extends TablaDAO<Administrador> {
             Usuario usuario = new UsuarioDAO().getByCodigo(codigo);
             lista.add(new Administrador(usuario));
         }
+        
 
         return lista;
     }

@@ -77,6 +77,24 @@ public class FacturaDAO extends TablaDAO<Factura> {
 
         return lista;
     }
+    
+    public ArrayList<Factura> getByUsuario(int codUsuario) throws SQLException {
+        ArrayList<Factura> lista = new ArrayList<>();
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY NUM_FACTURA";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, codUsuario);
+        ResultSet resultSet = prepared.executeQuery();
+        while (resultSet.next()) {
+            int codigo = resultSet.getInt("NUM_FACTURA");
+            LocalDateTime fechaFactura = resultSet.getTimestamp("fecha_factura").toLocalDateTime();
+            Pedido pedido = new PedidoDAO().getByCodigo(resultSet.getInt("COD_PEDIDO"));
+            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getByte("NUM_DIRECCION"), pedido.getCliente());
+//            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("NUM_DIRECCION"));
+            lista.add(new Factura(codigo, fechaFactura, pedido, direccion));
+        }
+
+        return lista;
+    }
 
     @Override
     public Factura getByCodigo(int codigo) throws SQLException {
@@ -94,4 +112,5 @@ public class FacturaDAO extends TablaDAO<Factura> {
 
         return null;
     }
+
 }

@@ -57,6 +57,7 @@ public class ResponsableDAO extends TablaDAO<Responsable> {
             String dni = resultSet.getString("dni");
             lista.add(new Responsable(usuario, dni));
         }
+        
         return lista;
     }
 

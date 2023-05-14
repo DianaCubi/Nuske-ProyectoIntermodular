@@ -1,5 +1,6 @@
-<%@page import="dto.Categoria"%>
 <%@page import="dao.ArticuloDAO"%>
+<%@page import="dto.Administrador"%>
+<%@page import="dto.Categoria"%>
 <%@page import="dto.Articulo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.UsuarioDAO"%>
@@ -50,19 +51,13 @@
             <%
             for(Categoria c : categorias){
             %>
-          <li class="perro">
-              <a href="index.jsp?cat=<%= c.toString() %>"><%= c.toString() %></a>
+          <li class="<%= c.toString().toLowerCase() %>">
+              <a href="index.jsp?cat=<%= c.toString() %>#productos"><%= c.toString() %></a>
           </li>
           <%
               }
           %>
 
-<!--          <li class="gato">
-            <a href="index.jsp?id=<%= Categoria.GATOS %>">Gatos</a>
-          </li>
-          <li class="exotico">
-            <a href="index.jsp?id=<%= Categoria.EXOTICOS %>">Exóticos</a>
-          </li>-->
           <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
           <li class="inicio-sesion">
               
@@ -84,6 +79,13 @@
     </section>
     </header>
     <main>
+        <%
+        if(usuarioSesion instanceof Administrador){
+        %>
+        <jsp:include page="admin.jsp"></jsp:include>
+        <%
+            }else{
+        %>
       <section class="main-superior">
         <article class="bienvenida">
           <h2>¡Bienvenidos a nuestra tienda!</h2>
@@ -108,6 +110,9 @@
           </figure>
         </article>
       </section>
+      <%
+          }
+      %>
       <section class="main-inferior">
         <hr />
         <h4>NUESTROS PRODUCTOS</h4>
@@ -120,7 +125,7 @@
           <article class="producto">
             <article class="imagen">
               <figure>
-                <img src="./img/ejemplo-pienso.png" alt="Foto del articulo" />
+                <img src="./img/articulos/<%= a.getFoto() %>" alt="Foto del articulo" />
               </figure>
             </article>
             <article class="texto-producto">

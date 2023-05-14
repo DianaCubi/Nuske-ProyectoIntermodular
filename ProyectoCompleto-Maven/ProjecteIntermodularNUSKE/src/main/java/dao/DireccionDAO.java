@@ -90,6 +90,7 @@ public class DireccionDAO extends TablaDAO<Direccion> {
             String tipo = resultSet.getString("TIPO");
             lista.add(new Direccion(num, usuario, direccion, poblacion, provincia, cp, tipo));
         }
+        
         return lista;
     }
 

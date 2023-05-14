@@ -1,11 +1,28 @@
+<%@page import="dao.DireccionDAO"%>
+<%@page import="dao.LineaArticuloDAO"%>
+<%@page import="dto.LineaArticulo"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.CestaDAO"%>
+<%@page import="dto.Cesta"%>
+<%@page import="dto.Direccion"%>
+<%@page import="java.util.List"%>
+<%@page import="dto.Cliente"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="dto.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+    //RECOGEMOS USUARIO
     Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
-    
     usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+    
+    //RECOGEMOS CARRITO DE USUARIO
+    Cesta carrito=null;
+    ArrayList<LineaArticulo> lineasCesta=null;
+    if(usuarioSesion instanceof Cliente){
+        carrito = new CestaDAO().getByCliente(usuarioSesion.getCodigo());
+        lineasCesta = new CestaDAO().getLineas(carrito.getCodigo());
+    }
 %>
 <html lang="es">
   <head>
@@ -81,7 +98,10 @@
       </section>
     </header>
     <main>
-      <form method="post" action="ActualizarCarrito" id="actualizarform">
+        <%
+        if(usuarioSesion instanceof Cliente){
+        %>
+      <form method="post" action="ActualizarCarrito" id="actualizarcarrito">
         <h2>CARRITO</h2>
         <!--
         <article class="titulos">
@@ -93,62 +113,46 @@
           <p>Eliminar</p>
         </article>
         -->
+        <%
+        for(LineaArticulo l : lineasCesta){
+        %>
         <article>
-          <p>Nº 1</p>
-          <img src="./img/ejemplo-pienso.png" alt="Pienso" />
-          <p>Nombre pienso</p>
-          <p>14'78€ (unidad)</p>
+          <p>Nº <%= l.getArticulo().getCodigo() %></p>
+          <img src="./img/articulos/<%= l.getArticulo().getFoto() %>" alt="Pienso" />
+          <p><%= l.getArticulo().getNombre() %></p>
+          <p><%= l.getArticulo().getPvp() %>€ (unidad)</p>
           <input
             type="number"
             min="0"
-            value="1"
+            value="<%= l.getUnidades() %>"
             name="codigo-producto"
             onchange="this.form.submit()"
           />
-          <p>27'78€</p>
+          <p><%= l.calcularSubtotalLinea() %>€</p>
           <a href="#"><i class="bi bi-trash"></i></a>
         </article>
-        <article>
-          <p>Nº 12</p>
-          <img src="./img/loro-main.png" alt="Pienso" />
-          <p>Nombre pienso</p>
-          <p>14'78€ (unidad)</p>
-          <input
-            type="number"
-            min="0"
-            value="1"
-            name="codigo-producto"
-            onchange="this.form.submit()"
-          />
-          <p>27'78€</p>
-          <a href="#"><i class="bi bi-trash"></i></a>
-        </article>
-        <article>
-          <p>Nº 32</p>
-          <img src="./img/profile-example.jpg" alt="Pienso" />
-          <p>Nombre pienso</p>
-          <p>14'78€ (unidad)</p>
-          <input
-            type="number"
-            min="0"
-            value="1"
-            name="codigo-producto"
-            onchange="this.form.submit()"
-          />
-          <p>27'78€</p>
-          <a href="#"><i class="bi bi-trash"></i></a>
-          
-        </article>
-
+        <%
+            }
+        %>
         <label for="direccion">Elige la dirección del pedido:</label>
-        <select name="direccion" id="direccion">
-          <option value="#">Calle ambrosio 23</option>
-          <option value="#">Calle Jose Maria Soler 8</option>
+        <select name="direccion" id="direccion" onchange="this.form.submit()">
+            <%
+                List<Direccion> direcciones = new DireccionDAO().getDireccionesDe(usuarioSesion);
+                for(Direccion d : direcciones){
+            %>    
+          <option value="<%= d.getNum() %>"><%= d.getDireccion() %></option>
+          <%
+          }
+          %>
         </select>
-
-        <p class="precio-total">Total del carrito (IVA incluido): 44€</p>
+          <p class="precio-total">Total del carrito (IVA incluido): <%= new CestaDAO().calcularTotal(carrito) %>€</p>
         <button onclick="confirmarPedido()">Confirmar pedido</button>
       </form>
+      <%
+          }else{
+          out.println("<p style=\"height:60vh;text-align:center;font-size:27px;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");
+        }
+      %>
     </main>
     <footer>
       <ul>

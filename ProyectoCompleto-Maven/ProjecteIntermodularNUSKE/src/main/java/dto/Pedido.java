@@ -13,9 +13,10 @@ public class Pedido {
     private final Direccion direccionPedido;
     private final Cliente cliente;
     private final double descuento;
+    private final boolean facturado;
 
     //CONSTRUCTOR
-    public Pedido(int codigo, EstadoPedido estadoPedido, LocalDateTime fechaPedido, Cesta cesta, Direccion direccionPedido, Cliente cliente, double descuento) {
+    public Pedido(int codigo, EstadoPedido estadoPedido, LocalDateTime fechaPedido, Cesta cesta, Direccion direccionPedido, Cliente cliente, double descuento, boolean facturado) {
             this.codigo = codigo;
             this.estadoPedido = estadoPedido;
             this.fechaPedido = fechaPedido;
@@ -23,6 +24,8 @@ public class Pedido {
             this.direccionPedido = direccionPedido;
             this.cliente = cliente;
             this.descuento = descuento;
+            
+            this.facturado = facturado;
     }
 
     //MÉTODOS
@@ -53,6 +56,11 @@ public class Pedido {
     public double getDescuento() {
         return descuento;
     }
+
+    public boolean isFacturado() {
+        return facturado;
+    }
+    
 
 //    public double calcularSubTotal() {
 //        return cesta.calcularSubTotal();

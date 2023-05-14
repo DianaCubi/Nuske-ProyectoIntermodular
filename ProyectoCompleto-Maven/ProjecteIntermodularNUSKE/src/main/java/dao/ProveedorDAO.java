@@ -63,6 +63,7 @@ public class ProveedorDAO extends TablaDAO<Proveedor> {
             
             lista.add(new Proveedor(codigo, nombre, direccion, personaContacto, telefono, emailProveedor, condicionCompra, datosInteres));
         }
+        
         return lista;
     }
 

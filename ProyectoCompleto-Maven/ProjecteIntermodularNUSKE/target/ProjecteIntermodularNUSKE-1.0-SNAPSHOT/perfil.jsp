@@ -87,7 +87,7 @@
 
             <section class="der-foto">
                 <figure>
-                    <img src="./img/<%= usuarioSesion.getFoto() %>" alt="Nombre de usuario">
+                    <img src="./img/perfiles/<%= usuarioSesion.getFoto() %>" alt="Nombre de usuario">
                 </figure>
                 <p><a href="#">Editar perfil</a></p>
                 <%
@@ -139,8 +139,6 @@
                 </p>
                 <%
                     }
-
-
                     if(usuarioSesion instanceof Socio){
                 %>
                 <p>
@@ -161,10 +159,15 @@
                 %>
             </section>
             <section class="izq-botones">
+                <%
+                    if(usuarioSesion instanceof Cliente){
+                %>
                 <a href="./listas.jsp">Listas</a>
                 <a href="./pedidos.jsp">Pedidos</a>
                 <a href="./facturas.jsp">Facturas</a>
+                
                 <%
+                    }
                    if(usuarioSesion instanceof Responsable){
                 %>
                 <a href="#">Mascotas</a>
@@ -176,12 +179,7 @@
             </section>
             <%
             } else {
-            %>
-            <section class="s-sinLogin" style="height:60vh;display:flex;align-items:center;">
-                <p class="p-sinLogin">Sabía que ibas a intentar esto, José Ramón</p>
-            </section>
-
-            <%
+                out.println("<p style=\"height:60vh;text-align:center;font-size:27px;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");            
                 }
             %>
         </main>

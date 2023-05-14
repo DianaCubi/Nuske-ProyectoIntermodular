@@ -5,6 +5,7 @@ import dto.Cliente;
 import dto.Direccion;
 import dto.EstadoPedido;
 import dto.Pedido;
+import dto.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -72,8 +73,32 @@ public class PedidoDAO extends TablaDAO<Pedido> {
             Cliente cliente = new ClienteDAO().getByCodigo(resultSet.getInt("cod_usuario"));
             Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("num_direccion"), cliente);
             double descuento = resultSet.getDouble("descuento");
+            boolean facturado = estaFacturado(codigo);
             
-            lista.add(new Pedido(codigo, estado, fechaPedido, cesta, direccion, cliente, descuento));
+            lista.add(new Pedido(codigo, estado, fechaPedido, cesta, direccion, cliente, descuento, facturado));
+        }
+
+        return lista;
+    }
+    
+    public ArrayList<Pedido> getByUsuario(int codUsuario) throws SQLException {
+        ArrayList<Pedido> lista = new ArrayList<>();
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY codigo";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, codUsuario);
+        ResultSet resultSet = prepared.executeQuery();
+        while (resultSet.next()) {
+            int codigo = resultSet.getInt("codigo");
+            EstadoPedido estado = EstadoPedido.valueOf(resultSet.getString("estado").toUpperCase());
+            LocalDateTime fechaPedido = resultSet.getTimestamp("fecha").toLocalDateTime();
+            Cesta cesta = new CestaDAO().getByCodigo(resultSet.getInt("cod_cesta"));
+//            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("num_direccion"));
+            Cliente cliente = new ClienteDAO().getByCodigo(resultSet.getInt("cod_usuario"));
+            Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("num_direccion"), cliente);
+            double descuento = resultSet.getDouble("descuento");
+            boolean facturado = estaFacturado(codigo);
+            
+            lista.add(new Pedido(codigo, estado, fechaPedido, cesta, direccion, cliente, descuento, facturado));
         }
 
         return lista;
@@ -93,11 +118,20 @@ public class PedidoDAO extends TablaDAO<Pedido> {
             Cliente cliente = new ClienteDAO().getByCodigo(resultSet.getInt("cod_usuario"));
             Direccion direccion = new DireccionDAO().getByCodigo(resultSet.getInt("num_direccion"), cliente);
             double descuento = resultSet.getDouble("descuento");
+            boolean facturado = estaFacturado(codigo);
             
-            return new Pedido(codigo, estado, fechaPedido, cesta, direccion, cliente, descuento);
+            return new Pedido(codigo, estado, fechaPedido, cesta, direccion, cliente, descuento,facturado);
         }
 
         return null;
+    }
+    
+    public boolean estaFacturado(int codPedido) throws SQLException{
+        String sentenciaSQL = "SELECT * FROM NUSKE_FACTURA WHERE COD_PEDIDO=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, codPedido);
+        ResultSet resultSet = prepared.executeQuery();
+        return prepared.executeUpdate() != 0;
     }
 
 }
