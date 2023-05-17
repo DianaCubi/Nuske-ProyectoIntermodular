@@ -4,6 +4,7 @@
  */
 package dao;
 
+import dto.Articulo;
 import dto.Cesta;
 import dto.Cliente;
 import dto.LineaArticulo;
@@ -32,8 +33,13 @@ public class CestaDAO extends TablaDAO<Cesta> {
 
     @Override
     public int anyadir(Cesta c) throws SQLException {
-        // PARA AÑADIR UNA CESTA SE NECESITA TANTO LA CESTA COMO LOS ARTICULOS DE LA MISMA
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sentenciaSQL = "INSERT INTO " + tabla + " VALUES(?,?)";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, c.getCodigo());
+        prepared.setInt(2, c.getCreadorCesta().getCodigo());
+        int resultado = prepared.executeUpdate();
+        
+        return resultado;
     }
     
     public int anyadir(Cesta c, ArrayList<LineaArticulo> lineas) throws SQLException{
@@ -143,7 +149,11 @@ public class CestaDAO extends TablaDAO<Cesta> {
         ResultSet resultSet = prepared.executeQuery();
         
         while (resultSet.next()) {
-            LineaArticulo lineaArticulo = lineaArticuloDAO.getByCodigo(resultSet.getInt("CODIGO_CESTA"));
+            Articulo art = new ArticuloDAO().getByCodigo(resultSet.getString("CODIGO_ART"));
+            Cesta cesta = new CestaDAO().getByCodigo(resultSet.getInt("CODIGO_CESTA"));
+            
+            LineaArticulo lineaArticulo = new LineaArticulo(art, cesta, resultSet.getInt("NUMERO_UNIDADES"));
+//            LineaArticulo lineaArticulo = lineaArticuloDAO.getByCodigo(resultSet.getInt("CODIGO_CESTA"));
             lineaArticulos.add(lineaArticulo);
         }
         return lineaArticulos;

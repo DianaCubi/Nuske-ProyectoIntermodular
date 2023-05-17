@@ -340,6 +340,12 @@ public class PruebasDAO {
 //            cestaDAO.eliminar(cesta3,lineasArt);
             
 
+            //--GETLINEAS DE CESTA
+            ArrayList<LineaArticulo> lineasCarrito = cestaDAO.getLineas(cestaDAO.getByCliente(3).getCodigo());
+            for (LineaArticulo la : lineasCarrito){
+                System.out.println(la.getArticulo().getCodigo() + " " + la.getUnidades());
+            }
+
 //            *CLASE PEDIDO*
             PedidoDAO pedDAO = new PedidoDAO();
             //--GETBYCODIGO

@@ -8,6 +8,10 @@
         <servlet-name>LogOut</servlet-name>
         <servlet-class>controlador.LogOut</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AnyadirAlCarrito</servlet-name>
+        <servlet-class>controlador.AnyadirAlCarrito</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>LogOut</servlet-name>
         <url-pattern>/LogOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AnyadirAlCarrito</servlet-name>
+        <url-pattern>/AnyadirAlCarrito</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -26,6 +26,7 @@ dao\ComentarioDAO.class
 dao\IDAO.class
 dto\Comentario.class
 dto\EstadoMascota.class
+controlador\AnyadirAlCarrito.class
 dao\DireccionDAO.class
 dto\LineaArticulo.class
 dto\Factura.class

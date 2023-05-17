@@ -191,7 +191,7 @@ foreign key (cod_pedido) references nuske_pedido
 --- categor�a a la que pertenece.
         
 create table NUSKE_ARTICULO (
-CODIGO varchar2 (10) primary key, 
+CODIGO NUMBER(10) primary key, 
 FOTO varchar2(50), 
 NOMBRE varchar2 (40),
 DESCRIPCION varchar2 (150),
@@ -217,7 +217,7 @@ constraint subcategoria_articulo check(subcategoria in ('HOGAR', 'ENTRETENIMIENT
 --- restricciones dos FK referidas a las tablas nuske_articulo y nuske_cesta. Adem�s, tiene dos claves primarias.
 
 create table NUSKE_ARTICULO_EN_CESTA (
-CODIGO_ART varchar2 (10), 
+CODIGO_ART NUMBER (10), 
 CODIGO_CESTA number (5),
 NUMERO_UNIDADES number (5) not null,
 PVP_ART number (6,2) not null,
@@ -238,7 +238,7 @@ constraint PK_nuske_articulo_en_cesta primary key (codigo_art, codigo_cesta)
 create table NUSKE_ARTICULO_EN_LISTA (
 NOMBRE_LISTA varchar2 (50),
 COD_CLIENTE number(4),
-CODIGO_ART varchar2 (10), 
+CODIGO_ART NUMBER (10), 
 foreign key (codigo_art) references nuske_articulo,
 foreign key (nombre_lista, cod_cliente) references nuske_lista,
 constraint PK_nuske_articulo_en_lista primary key (nombre_lista, cod_cliente, codigo_art)
@@ -252,7 +252,7 @@ constraint PK_nuske_articulo_en_lista primary key (nombre_lista, cod_cliente, co
 
 create table NUSKE_RECOMENDACION_SOCIOS(
 COD_SOCIO number (4),
-CODIGO_ART varchar2 (10), 
+CODIGO_ART NUMBER (10), 
 E_MAIL_SOCIO varchar2 (50),
 DESCRIPCION varchar2 (250),
 foreign key (cod_socio) references nuske_socio,
@@ -268,7 +268,7 @@ constraint PK_nuske_recomendacion_socios primary key (cod_socio, codigo_art)
 
 create table NUSKE_VENTAS_SOCIOS (
 COD_SOCIO number (4),
-CODIGO_ART varchar2 (10),
+CODIGO_ART NUMBER (10),
 COMISION number (4,2),
 foreign key (cod_socio) references nuske_socio,
 foreign key (codigo_art) references nuske_articulo,
@@ -285,7 +285,7 @@ constraint PK_nuske_ventas_socios primary key (cod_socio, codigo_art)
 
 create table NUSKE_COMENTARIO (
 NUM_COMENTARIO number (3),
-CODIGO_ART varchar2 (10),
+CODIGO_ART NUMBER (10),
 PSEUDONIMO varchar2 (25) not null,
 VALORACION number (2) not null,
 CALIDAD_PRECIO varchar2 (20) not null,
@@ -321,7 +321,7 @@ OTROS_DATOS_INTERES varchar2 (250)
 
 create table NUSKE_PROVEEDOR_SUM_ART (
 COD_PROVEEDOR number (3),
-COD_ARTICULO varchar2 (10),
+COD_ARTICULO NUMBER (10),
 foreign key (cod_proveedor) references nuske_proveedor,
 foreign key (cod_articulo) references nuske_articulo,
 constraint PK_nuske_proveedor_art primary key (cod_proveedor, cod_articulo)
