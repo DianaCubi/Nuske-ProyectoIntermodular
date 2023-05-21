@@ -3,7 +3,7 @@ package dto;
 import java.util.Objects;
 
 public class Direccion {
-    
+
     private final int num;
     private final Usuario usuario;
     private final String direccion;
@@ -12,7 +12,6 @@ public class Direccion {
     private final int cp;
     private final String tipo;
 
-    
     //Constructor para direcciones.
     public Direccion(int num, Usuario usuario, String direccion, String poblacion, ListaProvincias provincia, int cp, String tipo) {
         this.num = num;
@@ -23,7 +22,7 @@ public class Direccion {
         this.cp = cp;
         this.tipo = tipo;
     }
-    
+
     //Métodos Get y Set.
     public int getNum() {
         return num;
@@ -32,8 +31,7 @@ public class Direccion {
     public Usuario getUsuario() {
         return usuario;
     }
-    
-    
+
     public String getDireccion() {
         return direccion;
     }
@@ -58,7 +56,7 @@ public class Direccion {
     public String toString() {
         return "Direccion{" + "num=" + num + ", usuario=" + usuario + ", direccion=" + direccion + ", poblacion=" + poblacion + ", provincia=" + provincia + ", cp=" + cp + ", tipo=" + tipo + '}';
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -101,6 +99,8 @@ public class Direccion {
         return this.provincia == other.provincia;
     }
 
-    
-    
+    public boolean perteneceA(Usuario u) {
+        return this.usuario.getCodigo() == u.getCodigo();
+    }
+
 }

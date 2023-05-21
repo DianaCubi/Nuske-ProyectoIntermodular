@@ -79,6 +79,31 @@ public abstract class TablaDAO<T> implements IDAO<T> {
         }
         return ultimo + 1;
     }
+    
+    public int siguienteCodigoFactura() throws SQLException {
+        int ultimo = 0;
+        String sentenciaSQL = "SELECT NUM_FACTURA FROM " + tabla;
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            try (Connection conn = datasource.getConnection()) {
+                try (Statement statement = conn.createStatement()) {
+                    try (ResultSet resultSet = statement.executeQuery(sentenciaSQL)) {
+                        while (resultSet.next()) {
+                            int codigo = resultSet.getInt("NUM_FACTURA");
+                            if (codigo > ultimo) {
+                                ultimo = codigo;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TablaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ultimo + 1;
+    }
 
     @Override
     public void vaciar() throws SQLException {

@@ -317,8 +317,8 @@ public class PruebasDAO {
 //            }
 
             //--GETBYCLIENTE
-//            Cesta cesta5 = cestaDAO.getByCliente(3);
-//            System.out.println(cesta5);
+            Cesta cesta5 = cestaDAO.getByCliente(3);
+            System.out.println(cesta5);
             
             //--EXISTE
 //            Cesta cesta2 = cestaDAO.getByCodigo(1);

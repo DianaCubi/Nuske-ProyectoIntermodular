@@ -127,9 +127,10 @@ public class CestaDAO extends TablaDAO<Cesta> {
     }
     
     public Cesta getByCliente(int codCliente) throws SQLException {
-        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_CLIENTE=?";
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_CLIENTE=? AND codigo>=ALL(SELECT codigo FROM NUSKE_CESTA WHERE COD_CLIENTE=?)";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setInt(1, codCliente);
+        prepared.setInt(2, codCliente);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
             int codigo = resultSet.getInt("codigo");

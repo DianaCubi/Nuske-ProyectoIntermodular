@@ -1,3 +1,4 @@
+<%@page import="dto.Categoria"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="dao.CestaDAO"%>
 <%@page import="dto.Responsable"%>
@@ -24,6 +25,8 @@
     } else if (usuarioSesion instanceof Cliente) {
         facturas = fDAO.getByUsuario(usuarioSesion.getCodigo());
     }
+
+    ArrayList<Categoria> categorias = Categoria.getAll();
 %>
 <html lang="es">
 
@@ -39,6 +42,8 @@
     <body>
         <header>
             <section class="header-wrapper">
+
+
                 <section class="titulo">
                     <a href="./index.jsp">
                         <h3>NUSKË</h3>
@@ -46,37 +51,19 @@
                 </section>
                 <section class="navegacion">
                     <ul>
-                        <li class="perro">
-                            <a href="#">Perros</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
+                        <%
+                            for (Categoria c : categorias) {
+                        %>
+                        <li class="<%= c.toString().toLowerCase()%>">
+                            <a href="index.jsp?cat=<%= c.toString()%>#productos"><%= c.toString()%></a>
                         </li>
-                        <li class="gato">
-                            <a href="#">Gatos</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
-                        </li>
-                        <li class="exotico">
-                            <a href="#">Exóticos</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
-                        </li>
-                        <li class="buscador">
-                            <i class="bi bi-search"></i><input type="text" placeholder="Buscar..." />
-                        </li>
+                        <%
+                            }
+                        %>
+
+                        <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
                         <li class="inicio-sesion">
+
                             <%
                                 if (usuarioSesion != null) {
                                     out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>" + usuarioSesion.getNombre() + "</a>");
@@ -100,7 +87,9 @@
                 if (usuarioSesion == null || usuarioSesion instanceof Responsable || usuarioSesion instanceof Socio) {
                     out.println("<p style=\"height:60vh;text-align:center;font-size:27px;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");
                 } else {
-                    for (Factura fac : facturas) {
+                    if (facturas != null && facturas.size() != 0) {
+
+                        for (Factura fac : facturas) {
             %>
             <article>
                 <%
@@ -109,17 +98,21 @@
                     }
                 %>
 
-                <p>Factura nº <%= fac.getNumeroFactura() %></p>
-                <p>Pedido nº <%= fac.getPedido().getCodigo() %></p>
-                <p><%= fac.getFacturacion().getDireccion() %></p>
-                <p><%= fac.getFechaFactura().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) %></p>
-                <p><%= new CestaDAO().calcularTotal(fac.getPedido().getCesta())  %>€</p>
+                <p>Factura nº <%= fac.getNumeroFactura()%></p>
+                <p>Pedido nº <%= fac.getPedido().getCodigo()%></p>
+                <p><%= fac.getFacturacion().getDireccion()%></p>
+                <p><%= fac.getFechaFactura().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
+                <p><%= new CestaDAO().calcularTotal(fac.getPedido().getCesta())%>€</p>
                 <a href="#"><i class="bi bi-filetype-xml"></i></a>
                 <a href="#"><i class="bi bi-filetype-pdf"></i></a>
             </article>
             <%
-                    
-}}
+                        }
+                    }
+                    if (facturas.size() == 0) {
+                        out.println("<p style=\"text-align:center;\">¡Todavía no hay ninguna factura que mostrar!</p>");
+                    }
+                }
             %>
         </main>
         <footer>

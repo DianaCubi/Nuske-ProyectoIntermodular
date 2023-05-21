@@ -111,7 +111,7 @@ constraint pk_lista primary key (nombre, cod_cliente)
 
 create table NUSKE_CESTA(
 CODIGO number (5) primary key,
-COD_CLIENTE number (4) unique not null,
+COD_CLIENTE number (4) not null,
 foreign key (cod_cliente) references nuske_cliente
 );
 

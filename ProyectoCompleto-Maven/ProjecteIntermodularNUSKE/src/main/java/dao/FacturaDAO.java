@@ -112,5 +112,5 @@ public class FacturaDAO extends TablaDAO<Factura> {
 
         return null;
     }
-
+    
 }

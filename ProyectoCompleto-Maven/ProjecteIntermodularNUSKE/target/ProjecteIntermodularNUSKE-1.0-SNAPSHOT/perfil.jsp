@@ -1,3 +1,5 @@
+<%@page import="dto.Categoria"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="dto.Cliente"%>
 <%@page import="dao.UsuarioDAO"%>
@@ -8,8 +10,10 @@
 <!DOCTYPE html>
 <%
     Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
-
     usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
+    
+
+    ArrayList<Categoria> categorias = Categoria.getAll();
 %>
 <html lang="es">
     <head>
@@ -24,44 +28,30 @@
         <title>Nuskë - Login</title>
     </head>
     <body>
-        <header>
-            <section class="header-wrapper">
-                <section class="titulo">
-                    <a href="./index.jsp">
-                        <h3>NUSKË</h3>
-                    </a>
-                </section>
-                <section class="navegacion">
-                    <ul>
-                        <li class="perro">
-                            <a href="#">Perros</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
-                        </li>
-                        <li class="gato">
-                            <a href="#">Gatos</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
-                        </li>
-                        <li class="exotico">
-                            <a href="#">Exóticos</a>
-                            <ul class="subcategoria">
-                                <li><a href="#">Hogar</a></li>
-                                <li><a href="#">Entretenimiento</a></li>
-                                <li><a href="#">Alimentación</a></li>
-                                <li><a href="#">Salud e higiene</a></li>
-                            </ul>
-                        </li>
-                        <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
-                                  <li class="inicio-sesion">
+            <header>
+      <section class="header-wrapper">
+
+      
+      <section class="titulo">
+        <a href="./index.jsp">
+          <h3>NUSKË</h3>
+        </a>
+      </section>
+      <section class="navegacion">
+        <ul>
+            <%
+            for(Categoria c : categorias){
+            %>
+          <li class="<%= c.toString().toLowerCase() %>">
+              <a href="index.jsp?cat=<%= c.toString() %>#productos"><%= c.toString() %></a>
+          </li>
+          <%
+              }
+          %>
+
+          <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
+          <li class="inicio-sesion">
+              
               <%
                   if(usuarioSesion!=null){
                   out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
@@ -72,13 +62,13 @@
               %>
             
           </li>
-                        <li class="cesta">
-                            <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-        </header>
+          <li class="cesta">
+            <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
+          </li>
+        </ul>
+      </section>
+    </section>
+    </header>
 
         <main>
             <%

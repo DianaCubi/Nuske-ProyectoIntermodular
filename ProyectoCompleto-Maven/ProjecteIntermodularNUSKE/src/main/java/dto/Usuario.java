@@ -70,12 +70,11 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", email=" + email + ", telefono=" + telefono + ", contrase\u00f1a=" + contraseña + ", ultConexion=" + ultConexion + ", foto=" + foto + '}';
     }
-     
-   
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 71 * hash + this.codigo;
+        int hash = 3;
+        hash = 97 * hash + this.codigo;
         return hash;
     }
 
@@ -93,5 +92,8 @@ public class Usuario {
         final Usuario other = (Usuario) obj;
         return this.codigo == other.codigo;
     }
+     
+   
+
 
 }

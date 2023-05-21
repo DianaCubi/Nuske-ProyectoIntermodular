@@ -54,8 +54,8 @@ public class AnyadirAlCarrito extends HttpServlet {
                 String idProducto = request.getParameter("id");
                 String strCantidad = request.getParameter("cantidad");
                 
-                System.out.println("ID PRODUCTO: " + idProducto);
-                System.out.println("CANTIDAD: " + strCantidad);
+//                System.out.println("ID PRODUCTO: " + idProducto);
+//                System.out.println("CANTIDAD: " + strCantidad);
                 
 //                NO VA -> && strCantidad.chars().allMatch(Character::isDigit) -- PREGUNTAR A JOSÉ RAMÓN
                 if (idProducto != null && strCantidad != null) {
@@ -86,10 +86,10 @@ public class AnyadirAlCarrito extends HttpServlet {
                     
                     
                     
-                    System.out.println("LISTAAAAAAAAA");
-                    for(LineaArticulo la : lineas){
-                            System.out.println(la.getArticulo().getCodigo() + " " + la.getUnidades());
-                    }
+//                    System.out.println("LISTAAAAAAAAA");
+//                    for(LineaArticulo la : lineas){
+//                            System.out.println(la.getArticulo().getCodigo() + " " + la.getUnidades());
+//                    }
                     
                     response.sendRedirect("carrito.jsp");
                 }else{

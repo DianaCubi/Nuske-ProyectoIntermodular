@@ -24,8 +24,14 @@ public class LineaArticuloDAO extends TablaDAO<LineaArticulo>{
 
     @Override
     public int actualizar(LineaArticulo l) throws SQLException {
-        // NO SE UTILIZA EN NUESTRO PROYECTO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sentenciaSQL = "UPDATE " + tabla + " SET NUMERO_UNIDADES=? WHERE CODIGO_ART LIKE ? AND CODIGO_CESTA=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+
+        prepared.setInt(1, l.getUnidades());
+        prepared.setString(2, l.getArticulo().getCodigo());
+        prepared.setInt(3, l.getCesta().getCodigo());
+        
+        return prepared.executeUpdate();
     }
 
     @Override
@@ -70,6 +76,24 @@ public class LineaArticuloDAO extends TablaDAO<LineaArticulo>{
         ArrayList<LineaArticulo> lista = new ArrayList<>();
         String sentenciaSQL = "SELECT * FROM " + tabla + " ORDER BY CODIGO_CESTA";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
+        ResultSet resultSet = prepared.executeQuery();
+        while (resultSet.next()) {
+            Articulo articulo = new ArticuloDAO().getByCodigo(resultSet.getString("CODIGO_ART"));
+            Cesta cesta = new CestaDAO().getByCodigo(resultSet.getInt("codigo_cesta"));
+            int unidades = resultSet.getInt("NUMERO_UNIDADES");
+            //double PVP_ART = articulo.getPvp();
+            
+            lista.add(new LineaArticulo(articulo, cesta, unidades));
+        }
+
+        return lista;
+    }
+    
+    public ArrayList<LineaArticulo> getAllByCesta(int codCesta) throws SQLException {
+        ArrayList<LineaArticulo> lista = new ArrayList<>();
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE CODIGO_CESTA=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setInt(1, codCesta);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
             Articulo articulo = new ArticuloDAO().getByCodigo(resultSet.getString("CODIGO_ART"));

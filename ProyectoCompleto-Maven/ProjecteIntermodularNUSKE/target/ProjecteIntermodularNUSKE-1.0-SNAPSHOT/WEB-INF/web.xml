@@ -12,6 +12,26 @@
         <servlet-name>AnyadirAlCarrito</servlet-name>
         <servlet-class>controlador.AnyadirAlCarrito</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EliminarDelCarrito</servlet-name>
+        <servlet-class>controlador.EliminarDelCarrito</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarArtCarrito</servlet-name>
+        <servlet-class>controlador.EliminarArtCarrito</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarCarrito</servlet-name>
+        <servlet-class>controlador.ActualizarCarrito</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmarPedido</servlet-name>
+        <servlet-class>controlador.ConfirmarPedido</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Facturar</servlet-name>
+        <servlet-class>controlador.Facturar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
@@ -23,6 +43,26 @@
     <servlet-mapping>
         <servlet-name>AnyadirAlCarrito</servlet-name>
         <url-pattern>/AnyadirAlCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarDelCarrito</servlet-name>
+        <url-pattern>/EliminarDelCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarArtCarrito</servlet-name>
+        <url-pattern>/EliminarArtCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarCarrito</servlet-name>
+        <url-pattern>/ActualizarCarrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmarPedido</servlet-name>
+        <url-pattern>/ConfirmarPedido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Facturar</servlet-name>
+        <url-pattern>/Facturar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
