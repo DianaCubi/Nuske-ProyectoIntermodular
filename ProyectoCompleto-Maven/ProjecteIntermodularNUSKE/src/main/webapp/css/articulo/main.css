@@ -183,3 +183,75 @@ section.comentarios article.comentario p:first-child{
 section.comentarios article.comentario p span{
     font-weight: bold;
 }
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue; */
+    }
+
+    main section.parte-superior{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section.parte-superior section.imagen-producto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    main section.parte-superior section.imagen-producto figure img{
+        width: 250px;
+    }
+
+    main section.parte-superior section.info-producto h2{
+        font-size: 2em;
+    }
+
+    section.comentarios{
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    main{
+        /* background-color: red; */
+    }
+
+
+}
+
+@media (max-width: 576px){
+    main{
+        /* background-color: green; */
+    }
+
+    main section.parte-inferior article.escribir-coment form{
+        padding: 0;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+}
+
+@media (max-width: 360px) {
+    main{
+        /* background-color: rgb(205, 62, 109); */
+    }
+
+}

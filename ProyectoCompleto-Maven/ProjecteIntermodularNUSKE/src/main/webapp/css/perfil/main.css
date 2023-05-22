@@ -109,3 +109,88 @@ main section.s-sinLogin{
 main section.s-sinLogin p.p-sinLogin{
     color:red;
 }
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        width: 100%;
+        /* background-color: blue; */
+    }
+
+}
+
+@media (max-width: 768px) {
+    main section.der-foto{
+        grid-area: foto;
+        width: 100%;
+    }
+
+
+    main section.centro-inf{
+        grid-area: info;
+        width: 100%;
+        padding: 0;
+    }
+
+    main section.centro-inf p{
+        padding: 8px;
+        margin-right: 10px;
+    }
+
+    main section.izq-botones{
+        grid-area:botones;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    main section.izq-botones a{
+        margin: 20px;
+        width: 80%;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    main{
+        width: 100vw;
+        /* background-color: red; */
+        display: grid;
+        /* grid-template-rows: auto 1fr; */
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "foto info"
+                            "botones botones";
+        align-items: center
+    }
+
+
+}
+
+@media (max-width: 576px){
+    main{
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 480px) {
+    main{
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+}
+
+@media (max-width: 360px) {
+    main{
+        /* background-color: rgb(205, 62, 109); */
+    }
+
+}

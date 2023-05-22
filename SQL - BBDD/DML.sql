@@ -93,21 +93,21 @@ INSERT INTO NUSKE_FACTURA VALUES (2, sysdate, 2, 2, 7);
 
 
 --TABLA NUSKE_ARTICULO
-INSERT INTO NUSKE_ARTICULO VALUES (1, 'articulo.png', 'Cama de perro', 'Para perros medianos. Cama marrón', 156, 100, 3, 21, 25, TO_DATE('14/02/2023','DD/MM/YYYY'), 1, 'CAMAS', 'PERROS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (1, 'articulo.png', 'Cama de perro', 'Para perros medianos. Cama marrón', 356, 100, 3, 21, 25, TO_DATE('14/02/2023','DD/MM/YYYY'), 1, 'CAMAS', 'PERROS', 'HOGAR');
 INSERT INTO NUSKE_ARTICULO VALUES (2, 'articulo2.png', 'Champú de gato', 'Champú anticaspa para pieles sensibles', 342, 100, 65, 21, 14, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'CHAMPUS', 'GATOS', 'SALUD_E_HIGIENE');
-INSERT INTO NUSKE_ARTICULO VALUES (3, 'articulo3.png', 'Juguete para gato', 'Juguete interactivo con forma de rata con mando', 211, 100, 73, 21, 20.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'JUGUETES_INTERACTIVOS', 'GATOS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (3, 'articulo3.png', 'Juguete para gato', 'Juguete interactivo con forma de rata con mando', 241, 100, 73, 21, 20.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'JUGUETES_INTERACTIVOS', 'GATOS', 'ENTRETENIMIENTO');
 INSERT INTO NUSKE_ARTICULO VALUES (4, 'articulo4.png', 'Comedero pajaros', 'Comedero jaula para pajaros pequeños', 250, 50, 10, 21, 17.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMEDEROS', 'EXÓTICOS', 'HOGAR');
-INSERT INTO NUSKE_ARTICULO VALUES (5, 'articulo5.png', 'Transportín de gato', 'Transportín profesional para gatos', 100, 50, 5, 21, 49.9, TO_DATE('18/01/2023','DD/MM/YYYY'), 5, 'TRANSPORTINES', 'GATOS', 'HOGAR');
-INSERT INTO NUSKE_ARTICULO VALUES (6, 'articulo6.png', 'Pelota para perros', 'Pelota de rugbi para perros', 500, 100, 225, 21, 9.9, TO_DATE('01/02/2023','DD/MM/YYYY'), 5, 'PELOTAS', 'PERROS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (5, 'articulo5.png', 'Transportín de gato', 'Transportín profesional para gatos', 170, 50, 5, 21, 49.9, TO_DATE('18/01/2023','DD/MM/YYYY'), 5, 'TRANSPORTINES', 'GATOS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (6, 'articulo6.png', 'Pelota para perros', 'Pelota de rugbi para perros', 210, 100, 225, 21, 9.9, TO_DATE('01/02/2023','DD/MM/YYYY'), 5, 'PELOTAS', 'PERROS', 'ENTRETENIMIENTO');
 INSERT INTO NUSKE_ARTICULO VALUES (7, 'articulo7.png', 'Comida húmeda gourmet gold con pollo', 'Comida húmeda para gatos pequeños', 250, 50, 12, 21, 2.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'COMIDAS_HUMEDAS', 'GATOS', 'ALIMENTACION');
-INSERT INTO NUSKE_ARTICULO VALUES (8, 'articulo8.png', 'Comida para perros adultos marca Ultima', 'Comida en forma de estrella para perros', 100, 50, 5, 21, 12.5, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'PERROS', 'ALIMENTACION');
+INSERT INTO NUSKE_ARTICULO VALUES (8, 'articulo8.png', 'Comida para perros adultos marca Ultima', 'Comida en forma de estrella para perros', 170, 50, 5, 21, 12.5, TO_DATE('18/01/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'PERROS', 'ALIMENTACION');
 INSERT INTO NUSKE_ARTICULO VALUES (9, 'articulo9.png', 'Alpiste para pájaros High Quality', 'Alpiste para Agapornis y Ninfas', 250, 50, 10, 21, 5.5, TO_DATE('01/02/2023','DD/MM/YYYY'), 1, 'PIENSOS', 'EXÓTICOS', 'ALIMENTACION');
-INSERT INTO NUSKE_ARTICULO VALUES (10, 'articulo10.png', 'Corta uñas gato', 'Cortauñas para gatos', 50, 10, 5, 21, 19.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'OTROS', 'GATOS', 'SALUD_E_HIGIENE');
+INSERT INTO NUSKE_ARTICULO VALUES (10, 'articulo10.png', 'Corta uñas gato', 'Cortauñas para gatos', 80, 10, 5, 21, 19.5, TO_DATE('14/02/2023','DD/MM/YYYY'), 5, 'OTROS', 'GATOS', 'SALUD_E_HIGIENE');
 
-INSERT INTO NUSKE_ARTICULO VALUES (11, 'articulo11.png', 'Collar para perros', 'Collar negro con colgante en forma de hueso para perro', 80, 20, 1, 21, 15.99, TO_DATE('18/03/2023','DD/MM/YYYY'), 1, 'CORREAS', 'PERROS', 'ENTRETENIMIENTO');
-INSERT INTO NUSKE_ARTICULO VALUES (12, 'articulo12.png', 'Terrario para iguana', 'Terrario para iguanas y reptiles decorado con plantas y agujeros para la incorporación de comedero extraíble', 15, 5, 1, 21, 49.99, TO_DATE('21/03/2023','DD/MM/YYYY'), 1, 'CAMAS', 'EXÓTICOS', 'HOGAR');
+INSERT INTO NUSKE_ARTICULO VALUES (11, 'articulo11.png', 'Collar para perros', 'Collar negro con colgante en forma de hueso para perro', 100, 40, 1, 21, 15.99, TO_DATE('18/03/2023','DD/MM/YYYY'), 1, 'CORREAS', 'PERROS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (12, 'articulo12.png', 'Terrario para iguana', 'Terrario para iguanas y reptiles decorado con plantas y agujeros para la incorporación de comedero extraíble', 20, 10, 1, 21, 49.99, TO_DATE('21/03/2023','DD/MM/YYYY'), 1, 'CAMAS', 'EXÓTICOS', 'HOGAR');
 INSERT INTO NUSKE_ARTICULO VALUES (13, 'articulo13.png', 'Empapador para cachorro', 'Empapador para cachorros pequeños o para perros con problemas renales.', 200, 50, 30, 21, 8.99, TO_DATE('25/04/2023','DD/MM/YYYY'), 5, 'EMPAPADORES', 'PERROS', 'SALUD_E_HIGIENE');
-INSERT INTO NUSKE_ARTICULO VALUES (14, 'articulo14.png', 'Transportín para hurón', 'Transportín para hurones y animales pequeños', 10, 2, 1, 21, 29.99, TO_DATE('30/04/2023','DD/MM/YYYY'), 1, 'TRANSPORTINES', 'EXÓTICOS', 'ENTRETENIMIENTO');
+INSERT INTO NUSKE_ARTICULO VALUES (14, 'articulo14.png', 'Transportín para hurón', 'Transportín para hurones y animales pequeños', 150, 50, 1, 21, 29.99, TO_DATE('30/04/2023','DD/MM/YYYY'), 1, 'TRANSPORTINES', 'EXÓTICOS', 'ENTRETENIMIENTO');
 
 INSERT INTO NUSKE_ARTICULO VALUES (15, 'articulo15.png', 'Pienso para perros adultos[20 KG]', '20kg de pienso seco para perros adultos de todas las razas con 45% de carne', 100, 20, 1, 21, 39.99, TO_DATE('05/05/2023','DD/MM/YYYY'), 5, 'PIENSOS', 'PERROS', 'ALIMENTACION');
 INSERT INTO NUSKE_ARTICULO VALUES (16, 'articulo17.png', 'Pienso para gatos esterilizados', 'Pienso seco para gatos adultos y esterilizados. Marca Ultima', 80, 10, 1, 21, 29.99, TO_DATE('15/05/2023','DD/MM/YYYY'), 5, 'PIENSOS', 'GATOS', 'ALIMENTACION');

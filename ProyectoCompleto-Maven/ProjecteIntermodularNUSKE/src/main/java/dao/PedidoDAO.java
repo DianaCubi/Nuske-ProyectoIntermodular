@@ -26,8 +26,12 @@ public class PedidoDAO extends TablaDAO<Pedido> {
 
     @Override
     public int actualizar(Pedido p) throws SQLException {
-        // NO SE UTILIZA EN NUESTRO PROYECTO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sentenciaSQL = "UPDATE " + tabla + " SET ESTADO=? WHERE CODIGO=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setString(1, p.getEstadoPedido().toString());
+        prepared.setInt(2, p.getCodigo());
+        
+        return prepared.executeUpdate();
     }
 
     @Override
@@ -61,7 +65,7 @@ public class PedidoDAO extends TablaDAO<Pedido> {
     @Override
     public ArrayList<Pedido> getAll() throws SQLException {
         ArrayList<Pedido> lista = new ArrayList<>();
-        String sentenciaSQL = "SELECT * FROM " + tabla + " ORDER BY codigo";
+        String sentenciaSQL = "SELECT * FROM " + tabla + " ORDER BY codigo DESC";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
@@ -83,7 +87,7 @@ public class PedidoDAO extends TablaDAO<Pedido> {
     
     public ArrayList<Pedido> getByUsuario(int codUsuario) throws SQLException {
         ArrayList<Pedido> lista = new ArrayList<>();
-        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY codigo";
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY codigo DESC";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setInt(1, codUsuario);
         ResultSet resultSet = prepared.executeQuery();

@@ -51,35 +51,34 @@ public class ConfirmarPedido extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             Usuario usuarioSesion = (session != null && session.getAttribute("usuario") != null) ? (Usuario) session.getAttribute("usuario") : null;
             usuarioSesion = (usuarioSesion != null) ? UsuarioDAO.tipoUsuario(usuarioSesion.getCodigo()) : null;
-            
-            System.out.println("HOLA");
-            
+
             if (usuarioSesion == null || !(usuarioSesion instanceof Cliente)) {
                 out.println("<h2>No tienes permiso para acceder a esta sección</h2>");
-                
+
             } else {
-                
-                System.out.println("HOLA 2");
-                
+
                 PedidoDAO pDAO = new PedidoDAO();
                 CestaDAO cDAO = new CestaDAO();
                 Cesta carrito = cDAO.getByCliente(usuarioSesion.getCodigo());
-                
-                
-                if(request.getParameter("direccion")!=null){
-                    Direccion direccion = new DireccionDAO().getByCodigo(Integer.parseInt(request.getParameter("direccion")), usuarioSesion);
-                    
-                    System.out.println(pDAO.siguienteCodigo());
-                    
-                    Pedido pedido = new Pedido(pDAO.siguienteCodigo(), EstadoPedido.PROCESANDO, LocalDateTime.now(), carrito, direccion, (Cliente)usuarioSesion, 0, false);
-                
-                    pDAO.anyadir(pedido);
-                    
-                    Cesta nuevaCesta = new Cesta(cDAO.siguienteCodigo(), (Cliente)usuarioSesion);
-                    
-                    cDAO.anyadir(nuevaCesta);
 
-                    response.sendRedirect("pedidos.jsp");
+                if (request.getParameter("direccion") != null) {
+                    Direccion direccion = new DireccionDAO().getByCodigo(Integer.parseInt(request.getParameter("direccion")), usuarioSesion);
+
+                    Pedido pedido = new Pedido(pDAO.siguienteCodigo(), EstadoPedido.PROCESANDO, LocalDateTime.now(), carrito, direccion, (Cliente) usuarioSesion, 0, false);
+
+                    if (cDAO.revisarStock(carrito)) {
+                        cDAO.descontarStock(carrito);
+                        pDAO.anyadir(pedido);
+
+                        Cesta nuevaCesta = new Cesta(cDAO.siguienteCodigo(), (Cliente) usuarioSesion);
+
+                        cDAO.anyadir(nuevaCesta);
+
+                        response.sendRedirect("pedidos.jsp");
+                    } else{
+                        out.println("<h2>No tenemos suficiente stock para confirmar el pedido. Disculpe las molestias.</h2>");
+                    }
+
                 } else {
                     out.println("<h2>Datos incorrectos. Revisa el formulario</h2>");
                 }

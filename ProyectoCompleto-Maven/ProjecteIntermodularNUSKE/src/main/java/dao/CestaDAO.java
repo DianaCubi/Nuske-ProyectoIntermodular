@@ -5,9 +5,12 @@
 package dao;
 
 import dto.Articulo;
+import dto.Categoria;
 import dto.Cesta;
 import dto.Cliente;
 import dto.LineaArticulo;
+import dto.Subcategoria;
+import dto.TipoArticulo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -167,5 +170,29 @@ public class CestaDAO extends TablaDAO<Cesta> {
             total+=l.calcularSubtotalLinea();
         }
         return total;
+    }
+    
+    public boolean revisarStock(Cesta c) throws SQLException{
+        ArrayList<LineaArticulo> lineas = getLineas(c.getCodigo());
+        for (LineaArticulo l : lineas){
+            if(l.getArticulo().getStockActual()-l.getUnidades()<l.getArticulo().getStockMinimo()) return false;
+        }
+        return true;
+    }
+    
+    public void descontarStock(Cesta c) throws SQLException{
+        ArticuloDAO aDAO = new ArticuloDAO();
+        ArrayList<LineaArticulo> lineas = getLineas(c.getCodigo());
+        for (LineaArticulo l : lineas){
+            try {
+                Articulo a = l.getArticulo();
+                int nuevoStock = l.getArticulo().getStockActual()-l.getUnidades();
+                Articulo nuevoProducto = new Articulo(a.getCodigo(), a.getFoto(), a.getNombre(), a.getDescripcion(), a.getCategoria(), a.getSubcategoria(), a.getTipoArticulo(), nuevoStock, a.getStockMinimo(), a.getUnidades(), a.getIva(), a.getPvp(), a.getFechaCreacion(), a.getCreador(), a.getProveedor(), a.getSocioRecomendaciones(), a.getSocioVentas());
+                aDAO.actualizar(nuevoProducto);
+            } catch (SQLException e) {
+                System.out.println("Error SQL");
+            }
+            
+        }
     }
 }

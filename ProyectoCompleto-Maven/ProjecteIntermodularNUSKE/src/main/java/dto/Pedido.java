@@ -94,7 +94,7 @@ public class Pedido {
     }
     
     
-    public boolean perteneceAUsuario(Cliente u){
+    public boolean perteneceAUsuario(Usuario u){
         return this.getCliente().equals(u);
     }
     

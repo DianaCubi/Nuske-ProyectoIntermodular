@@ -63,7 +63,7 @@ public class FacturaDAO extends TablaDAO<Factura> {
     @Override
     public ArrayList<Factura> getAll() throws SQLException {
         ArrayList<Factura> lista = new ArrayList<>();
-        String sentenciaSQL = "SELECT * FROM " + tabla + " ORDER BY NUM_FACTURA";
+        String sentenciaSQL = "SELECT * FROM " + tabla + " ORDER BY NUM_FACTURA DESC";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         ResultSet resultSet = prepared.executeQuery();
         while (resultSet.next()) {
@@ -80,7 +80,7 @@ public class FacturaDAO extends TablaDAO<Factura> {
     
     public ArrayList<Factura> getByUsuario(int codUsuario) throws SQLException {
         ArrayList<Factura> lista = new ArrayList<>();
-        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY NUM_FACTURA";
+        String sentenciaSQL = "SELECT * FROM " + tabla + " WHERE COD_USUARIO=? ORDER BY NUM_FACTURA DESC";
         PreparedStatement prepared = getPrepared(sentenciaSQL);
         prepared.setInt(1, codUsuario);
         ResultSet resultSet = prepared.executeQuery();

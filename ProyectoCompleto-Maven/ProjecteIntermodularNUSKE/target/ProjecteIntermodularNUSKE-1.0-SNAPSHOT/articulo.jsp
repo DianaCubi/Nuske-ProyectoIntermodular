@@ -1,3 +1,4 @@
+<%@page import="dto.Administrador"%>
 <%@page import="dto.Categoria"%>
 <%@page import="dto.Cliente"%>
 <%@page import="dao.ComentarioDAO"%>
@@ -109,6 +110,21 @@
                         <p class="descripcion">
                             <%= a.getDescripcion()%>
                         </p>
+                        <%
+                        if(usuarioSesion != null && usuarioSesion instanceof Administrador){
+                        
+                        %>
+                        <p class="stock-actual">
+                            Stock actual: <%= a.getStockActual()%>
+                        </p>
+                        <p class="stock-minimo">
+                            Stock mínimo: <%= a.getStockMinimo()%>
+                        </p>
+                        
+                        <a href="#">Editar producto</a>
+                        <%
+                            }
+                        %>
                         <%
                             if (usuarioSesion != null && usuarioSesion instanceof Cliente) {
                         %>

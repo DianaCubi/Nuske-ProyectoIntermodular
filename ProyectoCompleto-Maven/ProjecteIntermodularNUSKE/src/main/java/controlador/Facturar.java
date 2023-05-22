@@ -68,26 +68,21 @@ public class Facturar extends HttpServlet {
             } else{
                 Pedido pedidoAFacturar = pedidoDAO.getByCodigo(Integer.parseInt(strId));
                 // Si el código es numérico pero no existe en la base de datos, o bien no pertenece al usuario conectado (excepto si es admin) mostraremos error.
-                if (pedidoAFacturar == null || (!pedidoAFacturar.perteneceAUsuario((Cliente)usuarioSesion) && !(usuarioSesion instanceof Administrador))) {
+                if (pedidoAFacturar == null || (!pedidoAFacturar.perteneceAUsuario(usuarioSesion) && !(usuarioSesion instanceof Administrador))) {
                     out.println("<h2>Pedido no encontrado.</h2>");
                 } else {
                     String strDir = request.getParameter("direccion");
                     Direccion dirEnvio = new DireccionDAO().getByCodigo(Integer.parseInt(strDir));
                     
-                    System.out.println("USUARIO SESION: " + usuarioSesion);
-                    System.out.println("USUARIO DIRECCION: " + dirEnvio.getUsuario());
-                    System.out.println(dirEnvio.perteneceA(usuarioSesion));
-                    
+//                    System.out.println(dirEnvio.perteneceA(usuarioSesion));
                     if (dirEnvio == null || (!dirEnvio.perteneceA(usuarioSesion) && !(usuarioSesion instanceof Administrador))) {
                         out.println("<h2>Dirección no encontrada</h2>");
                     } else {
                         // Si la factura pertenece al usuario en sesión (o es admin) entonces creamos una nueva factura con los datos del formulario y actualizamos el pedido (facturado = true)
                         Pedido pedidoFacturado = new Pedido(pedidoAFacturar.getCodigo(), EstadoPedido.COMPLETADO, pedidoAFacturar.getFechaPedido(), pedidoAFacturar.getCesta(), pedidoAFacturar.getDireccionPedido(), pedidoAFacturar.getCliente(), 0, true);
-                        System.out.println(facturaDAO.siguienteCodigoFactura());
                         Factura factura = new Factura(facturaDAO.siguienteCodigoFactura(), LocalDateTime.now(), pedidoFacturado, dirEnvio);
-                        System.out.println("HOLA");
                         facturaDAO.anyadir(factura);
-                        //pedidoDAO.actualizar(pedidoFacturado);
+                        pedidoDAO.actualizar(pedidoFacturado);
                         response.sendRedirect("facturas.jsp");
                     }
 

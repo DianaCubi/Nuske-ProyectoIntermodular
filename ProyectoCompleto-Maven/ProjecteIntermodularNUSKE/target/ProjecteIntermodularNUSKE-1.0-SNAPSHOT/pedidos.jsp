@@ -108,9 +108,7 @@
 
                 <p>Pedido nº <%= p.getCodigo()%></p>
                 <p><%= p.getFechaPedido().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
-                <!--  
                 <p><%= p.getEstadoPedido()%></p>
-                -->
                 <p><%= p.getDireccionPedido().getDireccion()%></p>
                 <p><%= new CestaDAO().calcularTotal(p.getCesta())%>€</p>
 

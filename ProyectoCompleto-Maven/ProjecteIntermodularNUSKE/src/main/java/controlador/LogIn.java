@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import dao.UsuarioDAO;
 import dto.Usuario;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -36,13 +38,15 @@ public class LogIn extends HttpServlet {
             String email = request.getParameter("usuario");
             String password = request.getParameter("contrasena");
             // Hacemos uso de logica de negocio del bean (dto) como el método "validar()"
-             Usuario usuario = new UsuarioDAO().getUsuario(email, password);
-            
+            Usuario usuario = new UsuarioDAO().getUsuario(email, password);
+            UsuarioDAO uDAO = new UsuarioDAO();
             if(usuario != null) {         
                 // Si el login es OK guardamos el objeto de tipo "Usuario" en la sesión para poder recuperarlo más tarde.
                 // Y tras esto redirigimos a "index.html"
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", usuario);
+                Usuario nuevaConexion = new Usuario(usuario.getCodigo(), usuario.getNombre(), usuario.getApellidos(), usuario.getFechaNacimiento(), usuario.getEmail(), usuario.getTelefono(), usuario.getContraseña(), LocalDateTime.now(), usuario.getFoto());
+                uDAO.actualizarUltimaConexion(usuario.getCodigo(), LocalDateTime.now());
                 response.sendRedirect("index.jsp");
             } else {
                 // Si el login no es correcto, enviamos un atributo "error" a true a "login.jsp" para que muestre el error.

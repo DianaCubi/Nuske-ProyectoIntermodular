@@ -1,3 +1,4 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="dto.Categoria"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.UsuarioDAO"%>
@@ -75,6 +76,7 @@
             <article class="usuario">
                 <p class="codigo">Código usuario: <%= u.getCodigo() %></p>
                 <p class="email"><%= u.getEmail() %></p>
+                <p class="ult_conexion">Últ. conexión: <%= u.getUltConexion().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))%></p>
                 <a href="#">Editar</a>
             </article>
             <%

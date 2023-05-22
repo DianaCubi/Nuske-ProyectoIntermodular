@@ -20,6 +20,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,9 +34,25 @@ public class ArticuloDAO extends TablaDAO<Articulo>{
     }
 
     @Override
-    public int actualizar(Articulo a) throws SQLException {
-        // NO SE UTILIZA EN NUESTRO PROYECTO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int actualizar(Articulo a) throws SQLException{
+            String sentenciaSQL = "UPDATE " + tabla + " SET foto=?, nombre=?, descripcion=?, stock_actual=?, stock_minimo=?, unidades=?, IVA=?, PVP=?, fecha_creacion=?, cod_admin=?, tipo=?, categoria=?, subcategoria=? WHERE codigo=?";
+            PreparedStatement prepared = getPrepared(sentenciaSQL);
+            prepared.setString(1, a.getFoto());
+            prepared.setString(2, a.getNombre());
+            prepared.setString(3, a.getDescripcion());
+            prepared.setInt(4, a.getStockActual());
+            prepared.setInt(5, a.getStockMinimo());
+            prepared.setInt(6, a.getUnidades());
+            prepared.setInt(7, a.getIva());
+            prepared.setDouble(8, a.getPvp());
+            prepared.setTimestamp(9, Timestamp.valueOf(a.getFechaCreacion()));
+            prepared.setInt(10, a.getCreador().getCodigo());
+            prepared.setString(11, a.getTipoArticulo().toString());
+            prepared.setString(12, a.getCategoria().toString());
+            prepared.setString(13,a.getSubcategoria().toString());
+            prepared.setString(14, a.getCodigo());
+            return prepared.executeUpdate();
+
     }
 
     @Override

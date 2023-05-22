@@ -26,9 +26,29 @@ public class UsuarioDAO  extends TablaDAO<Usuario> {
     }
 
     @Override
-    public int actualizar(Usuario objeto) throws SQLException {
-        // NO SE UTILIZA EN NUESTRO PROYECTO
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int actualizar(Usuario u) throws SQLException {
+        String sentenciaSQL = "UPDATE " + tabla + " SET E_MAIL=?, CONTRASENA=?, NOMBRE=?, APELLIDOS=?, FECHA_NAC=?, TELEFONO=?, FOTO=?, ULTIMA_CONEXION=? WHERE CODIGO=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setString(1, u.getEmail());
+        prepared.setString(2, u.getContraseña());
+        prepared.setString(3, u.getNombre());
+        prepared.setString(4, u.getApellidos());
+        prepared.setDate(5, Date.valueOf(u.getFechaNacimiento()));
+        prepared.setInt(6, u.getTelefono());
+        prepared.setString(7, u.getFoto());
+        prepared.setTimestamp(8, Timestamp.valueOf(u.getUltConexion()));
+        prepared.setInt(9, u.getCodigo());
+        
+        return prepared.executeUpdate();
+    }
+    
+    public int actualizarUltimaConexion(int codigoUsuario, LocalDateTime ultimaConexion) throws SQLException {
+        String sentenciaSQL = "UPDATE " + tabla + " SET ULTIMA_CONEXION=? WHERE CODIGO=?";
+        PreparedStatement prepared = getPrepared(sentenciaSQL);
+        prepared.setTimestamp(1, Timestamp.valueOf(ultimaConexion));
+        prepared.setInt(2, codigoUsuario);
+        
+        return prepared.executeUpdate();
     }
 
     @Override

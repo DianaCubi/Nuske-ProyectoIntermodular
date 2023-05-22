@@ -159,7 +159,7 @@
             </form>
             <%
                     }
-                    if (lineasCarrito.size() == 0) {
+                    if (lineasCarrito!=null && lineasCarrito.size() == 0) {
                         out.println("<p style=\"text-align:center;\">¡Todavía no hay ningún artículo en el carrito!</p>");
                     }
                 } else {
