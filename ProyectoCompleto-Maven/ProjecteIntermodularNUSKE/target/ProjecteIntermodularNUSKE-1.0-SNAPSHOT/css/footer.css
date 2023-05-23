@@ -36,3 +36,14 @@ footer ul li:hover a{
         font-size: 14px;
     }
 }
+
+@media (max-width: 360px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer ul{
+        border-bottom: 1px solid grey;
+    }
+}

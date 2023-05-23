@@ -4,6 +4,7 @@ D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularN
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Pedido.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Direccion.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\TipoArticulo.java
+D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\controlador\ExportarPDF.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dao\LineaArticuloDAO.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\EstadoPedido.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dao\CestaDAO.java
@@ -38,6 +39,7 @@ D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularN
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Administrador.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Mascota.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\controlador\EliminarArtCarrito.java
+D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\controlador\ExportarXML.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Responsable.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\Usuario.java
 D:\TORRE\Nuske-ProyectoIntermodular\ProyectoCompleto-Maven\ProjecteIntermodularNUSKE\src\main\java\dto\EstadoMascota.java

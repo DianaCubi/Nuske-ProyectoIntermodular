@@ -103,13 +103,13 @@
                 <p><%= fac.getFacturacion().getDireccion()%></p>
                 <p><%= fac.getFechaFactura().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
                 <p><%= new CestaDAO().calcularTotal(fac.getPedido().getCesta())%>€</p>
-                <a href="#"><i class="bi bi-filetype-xml"></i></a>
-                <a href="#"><i class="bi bi-filetype-pdf"></i></a>
+                <a href="ExportarXML?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-xml"></i></a>
+                <a href="ExportarPDF?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-pdf"></i></a>
             </article>
             <%
                         }
                     }
-                    if (facturas.size() == 0) {
+                    if (facturas != null && facturas.size() == 0) {
                         out.println("<p style=\"text-align:center;\">¡Todavía no hay ninguna factura que mostrar!</p>");
                     }
                 }

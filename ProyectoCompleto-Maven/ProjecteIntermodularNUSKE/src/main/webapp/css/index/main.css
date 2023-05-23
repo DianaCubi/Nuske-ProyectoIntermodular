@@ -151,7 +151,7 @@ main section.main-inferior a article.producto p:last-child {
 @media (max-width: 1120px) {
     main {
         width: 100%;
-        /* background-color: blue; */
+         background-color: blue; 
     }
 
     main section.main-superior {
@@ -188,7 +188,7 @@ main section.main-inferior a article.producto p:last-child {
 @media (max-width: 768px) {
     main{
         width: 100vw;
-        /* background-color: red; */
+         background-color: red; 
     }
 
     main section.main-inferior a article.producto p:first-child {
@@ -214,7 +214,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 576px){
     main{
-        /* background-color: green; */
+         background-color: green; 
     }
 
     main section.main-inferior a{
@@ -234,7 +234,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 480px) {
     main{
-        /* background-color: rgb(225, 171, 203); */
+         background-color: rgb(225, 171, 203); 
     }
 
     main section.main-inferior section.productos{
@@ -256,7 +256,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 400px) {
     main{
-        /* background-color: rgb(140, 32, 198); */
+         background-color: rgb(140, 32, 198); 
     }
 
     main section.main-superior img {
@@ -270,8 +270,9 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 360px) {
     main{
-        /* background-color: rgb(205, 62, 109); */
+         background-color: rgb(205, 62, 109); 
     }
+    
 
     main section.main-superior img {
         width: 150px;

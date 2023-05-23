@@ -59,23 +59,23 @@ INSERT INTO NUSKE_DIRECCION VALUES (1, 3, 'San Fernando, 25', 'Villena', 'ALICAN
 INSERT INTO NUSKE_DIRECCION VALUES (2, 7, 'San Pedro de Cuba, 10', 'Alava', 'ALAVA', 85026, 'Paseo');
 INSERT INTO NUSKE_DIRECCION VALUES (3, 5, 'Vampiro, 72', 'Elda', 'ALICANTE', 03600, 'Plaza');
 INSERT INTO NUSKE_DIRECCION VALUES (4, 1, 'La otra banda, 125', 'Elda', 'ALICANTE', 03600, 'Paseo');
-INSERT INTO NUSKE_DIRECCION VALUES (5, 2, 'Lo que faltaba, 2', 'Elda', 'ALICANTE', 03600, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (6, 4, 'Estoy hasta el regalo, 221', 'Elda', 'ALICANTE', 03600, 'Plaza');
+INSERT INTO NUSKE_DIRECCION VALUES (5, 2, 'Colonia Leticia Serrano, 2', 'Elda', 'ALICANTE', 03600, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (6, 4, 'Explanada Juan, 221', 'Elda', 'ALICANTE', 03600, 'Plaza');
 INSERT INTO NUSKE_DIRECCION VALUES (7, 6, 'La subidita, 1', 'Elda', 'ALICANTE', 03600, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (8, 8, 'Ya esta listo, 125', 'Elda', 'ALICANTE', 03600, 'Rotonda');
-INSERT INTO NUSKE_DIRECCION VALUES (9, 9, 'Villena, 221', 'Elda', 'ALICANTE', 03600, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (10, 10, 'Del coño, 216', 'Benidorm', 'ALICANTE', 03825, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (8, 8, 'Puerta Guillermina Lebrón, 125', 'Elda', 'ALICANTE', 03600, 'Rotonda');
+INSERT INTO NUSKE_DIRECCION VALUES (9, 9, 'Puerta José Eduardo, 221', 'Elda', 'ALICANTE', 03600, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (10, 10, 'Calleja Timoteo, 216', 'Benidorm', 'ALICANTE', 03825, 'Calle');
 INSERT INTO NUSKE_DIRECCION VALUES (11, 11, 'Avda de Ronda, 21', 'Elda', 'ALICANTE', 03600, 'Avenida');
 INSERT INTO NUSKE_DIRECCION VALUES (12, 11, 'El saladar, s/n', 'San Juan de Alicante', 'ALICANTE', 03628, 'Avenida');
-INSERT INTO NUSKE_DIRECCION VALUES (13, 11, 'La Rosalia, 2', 'Petrer', 'ALICANTE', 03610, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (14, 10, 'Hasta aquí, 5', 'Elda', 'ALICANTE', 03600, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (13, 11, 'Mateo Saavedra, 2', 'Petrer', 'ALICANTE', 03610, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (14, 10, 'Monte Elvira, 5', 'Elda', 'ALICANTE', 03600, 'Calle');
 INSERT INTO NUSKE_DIRECCION VALUES (15, 10, 'Las rosaletas, 16', 'Alicante', 'ALICANTE', 03030, 'Avenida');
 INSERT INTO NUSKE_DIRECCION VALUES (16, 3, 'Lucrecia, 5', 'Novelda', 'ALICANTE', 03025, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (17, 7, 'La piojosa, s/n', 'Arnedo', 'LA_RIOJA', 87105, 'Calle');
-INSERT INTO NUSKE_DIRECCION VALUES (18, 5, 'Licantropo, 22', 'Petrer', 'ALICANTE', 03610, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (17, 7, 'Gran Subida Benito Nevárez, s/n', 'Arnedo', 'LA_RIOJA', 87105, 'Calle');
+INSERT INTO NUSKE_DIRECCION VALUES (18, 5, 'Cuesta Cecilia Adame, 22', 'Petrer', 'ALICANTE', 03610, 'Calle');
 INSERT INTO NUSKE_DIRECCION VALUES (19, 3, 'Malvarosa, 55', 'Valencia', 'VALENCIA', 03332, 'Avenida');
-INSERT INTO NUSKE_DIRECCION VALUES (20, 7, 'Te enveneno esta noche, 69', 'Monovar', 'ALICANTE', 03612, 'Paseo');
-INSERT INTO NUSKE_DIRECCION VALUES (21, 5, 'Golosina, 222', 'San Juan de Alicante', 'ALICANTE', 03628, 'Avenida');
+INSERT INTO NUSKE_DIRECCION VALUES (20, 7, 'Edificio Elsa, 69', 'Monovar', 'ALICANTE', 03612, 'Paseo');
+INSERT INTO NUSKE_DIRECCION VALUES (21, 5, 'Bajada Armando Navarrete, 222', 'San Juan de Alicante', 'ALICANTE', 03628, 'Avenida');
 
 
 

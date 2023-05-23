@@ -96,9 +96,13 @@
                 </section>
             </section>
         </header>
-        <main style="min-height: 60vh">
+        <main>
             <%
-                if (usuarioSesion instanceof Cliente) {
+                System.out.println("holaaaa");
+                if (usuarioSesion == null || !(usuarioSesion instanceof Cliente)) {
+                    out.println("<p style=\"height:60vh;text-align:center;font-size:27px;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");
+                } else {
+                    System.out.println("eesta entrnaod aqui?");
             %>
             <form method="post" action="ActualizarCarrito" id="actualizarcarrito">
                 <h2>CARRITO</h2>
@@ -113,8 +117,9 @@
                 </article>
                 -->
                 <%
+                    System.out.println("y aqui?");
                     if (lineasCarrito != null && lineasCarrito.size() != 0) {
-
+                        System.out.println("hola");
                         for (LineaArticulo l : lineasCarrito) {
                 %>
                 <article>
@@ -123,12 +128,12 @@
                     <p><%= l.getArticulo().getNombre()%></p>
                     <p><%= l.getArticulo().getPvp()%>€ (unidad)</p>
 
-                    <!--<input type="hidden" name="codArt" value="<%= l.getArticulo().getCodigo() %>">-->
+                    <!--<input type="hidden" name="codArt" value="<%= l.getArticulo().getCodigo()%>">-->
                     <input
                         type="number"
                         min="1"
                         value="<%= l.getUnidades()%>"
-                        name="<%= l.getArticulo().getCodigo() %>"
+                        name="<%= l.getArticulo().getCodigo()%>"
                         onchange="this.form.submit()"
                         />
                     <p><%= l.calcularSubtotalLinea()%>€</p>
@@ -158,14 +163,14 @@
                 <!--<but //ton onclick="confirmarPedido()">Confirmar pedido</button>-->
             </form>
             <%
-                    }
-                    if (lineasCarrito!=null && lineasCarrito.size() == 0) {
+                        System.out.println("hola???");
+                    } else if (lineasCarrito == null || lineasCarrito.size() == 0) {
+                        System.out.println("hola2");
                         out.println("<p style=\"text-align:center;\">¡Todavía no hay ningún artículo en el carrito!</p>");
                     }
-                } else {
 
-                    out.println("<p style=\"font-size:28px;text-align:center;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");
                 }
+                System.out.println("sdds");
             %>
         </main>
         <footer>

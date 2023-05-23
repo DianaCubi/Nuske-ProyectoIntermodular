@@ -33,6 +33,7 @@ dao\PedidoDAO.class
 dao\ListaDAO.class
 dao\SocioDAO.class
 dto\Categoria.class
+controlador\ExportarPDF.class
 dao\UsuarioDAO.class
 dto\Subcategoria.class
 dto\Mascota.class
@@ -44,6 +45,7 @@ dao\DireccionDAO.class
 dto\LineaArticulo.class
 controlador\ConfirmarPedido.class
 dto\ListaProvincias.class
+controlador\ExportarXML.class
 dao\ResponsableDAO.class
 dto\Responsable.class
 dto\EstadoPedido.class

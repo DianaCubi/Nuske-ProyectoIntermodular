@@ -25,7 +25,7 @@
         <a href="./usuarios.jsp">Administrar usuarios</a>
         <a href="./pedidos.jsp">Administrar pedidos</a>
         <a href="./facturas.jsp">Administrar facturas</a>
-        <a href="./registro-articulo.jsp">Añadir articulo</a>
+        <!--<a href="./registro-articulo.jsp">Añadir articulo</a>-->
       </section>
     </main>
   </body>

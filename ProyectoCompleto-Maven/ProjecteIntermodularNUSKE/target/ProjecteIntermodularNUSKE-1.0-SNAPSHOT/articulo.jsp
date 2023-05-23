@@ -23,7 +23,7 @@
             comentarios = new ComentarioDAO().getAll(a.getCodigo());
         }
     }
-    
+
     ArrayList<Categoria> categorias = Categoria.getAll();
 
 %>
@@ -39,47 +39,45 @@
     </head>
 
     <body>
-            <header>
-      <section class="header-wrapper">
+        <header>
+            <section class="header-wrapper">
 
-      
-      <section class="titulo">
-        <a href="./index.jsp">
-          <h3>NUSKË</h3>
-        </a>
-      </section>
-      <section class="navegacion">
-        <ul>
-            <%
-            for(Categoria c : categorias){
-            %>
-          <li class="<%= c.toString().toLowerCase() %>">
-              <a href="index.jsp?cat=<%= c.toString() %>#productos"><%= c.toString() %></a>
-          </li>
-          <%
-              }
-          %>
 
-          <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
-          <li class="inicio-sesion">
-              
-              <%
-                  if(usuarioSesion!=null){
-                  out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>"+usuarioSesion.getNombre()+"</a>");
-                  }
-                  else{
-                  out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
-                  }
-              %>
-            
-          </li>
-          <li class="cesta">
-            <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
-          </li>
-        </ul>
-      </section>
-    </section>
-    </header>
+                <section class="titulo">
+                    <a href="./index.jsp">
+                        <h3>NUSKË</h3>
+                    </a>
+                </section>
+                <section class="navegacion">
+                    <ul>
+                        <%                for (Categoria c : categorias) {
+                        %>
+                        <li class="<%= c.toString().toLowerCase()%>">
+                            <a href="index.jsp?cat=<%= c.toString()%>#productos"><%= c.toString()%></a>
+                        </li>
+                        <%
+                            }
+                        %>
+
+                        <li class="buscador"><i class="bi bi-search"></i><input type="text" placeholder="Buscar..."/></li>
+                        <li class="inicio-sesion">
+
+                            <%
+                                if (usuarioSesion != null) {
+                                    out.println("<a href=\"./perfil.jsp\"><i class=\"bi bi-person-fill\"></i>" + usuarioSesion.getNombre() + "</a>");
+                                } else {
+                                    out.println("<a href=\"./login.jsp\"><i class=\"bi bi-person-fill\"></i></a>");
+                                }
+                            %>
+
+                        </li>
+                        <li class="cesta">
+                            <a href="carrito.jsp"><i class="bi bi-cart-fill"></i></a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </header>
 
         <main>
             <%
@@ -111,17 +109,26 @@
                             <%= a.getDescripcion()%>
                         </p>
                         <%
-                        if(usuarioSesion != null && usuarioSesion instanceof Administrador){
-                        
+                            if (usuarioSesion != null && usuarioSesion instanceof Administrador) {
+
                         %>
                         <p class="stock-actual">
                             Stock actual: <%= a.getStockActual()%>
                         </p>
+
                         <p class="stock-minimo">
                             Stock mínimo: <%= a.getStockMinimo()%>
                         </p>
+
+                        <a href="#" class="editar-prod">Editar producto</a>
+                        <%
+                            } else {
+
+                        %>
+                        <p class="stock-actual">
+                            Stock disponible: <%= a.getStockActual() - a.getStockMinimo() %>
+                        </p>
                         
-                        <a href="#">Editar producto</a>
                         <%
                             }
                         %>

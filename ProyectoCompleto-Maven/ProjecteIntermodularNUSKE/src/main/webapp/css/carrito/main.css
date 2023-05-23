@@ -1,3 +1,11 @@
+body{
+    min-height: 100vh;
+}
+
+main{
+    min-height: calc(100vh - 400px);
+}
+
 main form{
     margin-top: 30px;
     display: flex;
@@ -9,7 +17,6 @@ main form{
 main form h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 2px;
-    border-bottom: 1px solid grey;
 }
 
 main form article{
@@ -64,7 +71,8 @@ main form label{
 }
 
 main form select{
-    width: 350px;
+    width: 50%;
+    max-width: 400px;
     height: 40px;
     text-align: center;
     margin: 30px;
@@ -75,7 +83,7 @@ main form p.precio-total{
     font-size: 25px;
 }
 
-main form button{
+main form input[type="submit"]{
     width: 300px;
     height: 50px;
     border: 1px solid #44AFAA;
@@ -84,7 +92,65 @@ main form button{
     font-size: 20px;
 }
 
-main form button:hover{
+main form input[type="submit"]:hover{
     color: #44AFAA;
     background-color: rgb(247, 247, 247);
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue;  */
+    }
+
+}
+
+@media (max-width: 768px) {
+    main{
+         /* background-color: red;  */
+    }
+
+    main form article{
+        display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 70%;
+    }
+
+}
+
+@media (max-width: 576px){
+    main{
+         /* background-color: green;  */
+    }
+
+    main form p.precio-total{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    main{
+         /* background-color: rgb(225, 171, 203);  */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+         /* background-color: rgb(140, 32, 198);  */
+    }
+
+
+
+}
+
+@media (max-width: 360px) {
+    main{
+         /* background-color: rgb(205, 62, 109); */
+    }
+
+    
+
 }

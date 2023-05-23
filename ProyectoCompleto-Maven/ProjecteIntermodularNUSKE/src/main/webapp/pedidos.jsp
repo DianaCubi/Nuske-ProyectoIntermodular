@@ -92,7 +92,7 @@
             <h2>PEDIDOS</h2>
 
             <%
-                if (pedidos != null) {
+                if (pedidos != null && pedidos.size() != 0) {
                     for (Pedido p : pedidos) {
             %>
             <article>
@@ -106,16 +106,16 @@
                     }
                 %>
 
-                <p>Pedido nº <%= p.getCodigo()%></p>
-                <p><%= p.getFechaPedido().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
-                <p><%= p.getEstadoPedido()%></p>
-                <p><%= p.getDireccionPedido().getDireccion()%></p>
-                <p><%= new CestaDAO().calcularTotal(p.getCesta())%>€</p>
+                <p class="codigo-ped">Pedido nº <%= p.getCodigo()%></p>
+                <p class="fecha-ped"><%= p.getFechaPedido().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
+                <p class="estado-ped"><%= p.getEstadoPedido()%></p>
+                <p class="direccion-ped"><%= p.getDireccionPedido().getDireccion()%></p>
+                <p class="total-ped"><%= new CestaDAO().calcularTotal(p.getCesta())%>€</p>
 
                 <%
                     if (!p.isFacturado()) {
                 %>
-                <form name="<%= p.getCodigo()%>" method="post" action="Facturar">
+                <form class="fact" name="<%= p.getCodigo()%>" method="post" action="Facturar">
                     <input name="id" type="hidden" value="<%= p.getCodigo()%>" />
                     <select name="direccion">
                         <%
@@ -131,15 +131,16 @@
                 </form>
                 <%
                     } else {
-                        out.println("<p class=\"facturado\">Facturado</p>");
+                        out.println("<p class=\"facturado fact\">Facturado</p>");
                     }
                 %>
 
             </article>
             <%
                     }
-                } else {
-                    out.print("<h2 style=\"height:60vh\";>¡No tienes ningún pedido aún!</h2>");
+                }
+                if (pedidos != null && pedidos.size() == 0) {
+                    out.println("<p style=\"text-align:center;\">¡Todavía no hay ningún pedido que mostrar!</p>");
                 }
             %>
             <%

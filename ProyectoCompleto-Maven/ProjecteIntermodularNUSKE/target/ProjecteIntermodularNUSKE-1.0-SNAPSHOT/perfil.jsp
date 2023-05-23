@@ -152,7 +152,7 @@
                 <%
                     if(usuarioSesion instanceof Cliente){
                 %>
-                <a href="./listas.jsp">Listas</a>
+                <a href="#">Listas</a>
                 <a href="./pedidos.jsp">Pedidos</a>
                 <a href="./facturas.jsp">Facturas</a>
                 

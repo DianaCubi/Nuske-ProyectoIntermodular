@@ -32,6 +32,14 @@
         <servlet-name>Facturar</servlet-name>
         <servlet-class>controlador.Facturar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExportarXML</servlet-name>
+        <servlet-class>controlador.ExportarXML</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExportarPDF</servlet-name>
+        <servlet-class>controlador.ExportarPDF</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>Facturar</servlet-name>
         <url-pattern>/Facturar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExportarXML</servlet-name>
+        <url-pattern>/ExportarXML</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExportarPDF</servlet-name>
+        <url-pattern>/ExportarPDF</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

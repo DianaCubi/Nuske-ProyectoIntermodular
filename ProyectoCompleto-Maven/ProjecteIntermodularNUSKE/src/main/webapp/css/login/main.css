@@ -1,8 +1,12 @@
+body{
+    min-height: 100vh;
+}
+
 main{
     display: flex;
     justify-content: space-evenly;
     padding: 40px;
-    min-height: 500px;
+    min-height: calc(100vh - 480px);
 }
 
 
@@ -80,7 +84,10 @@ main section.registro ul li a:hover{
     }
 
     main section.inicio-sesion{
-        width: 50%;
+        width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 
     main section.inicio-sesion form input{
