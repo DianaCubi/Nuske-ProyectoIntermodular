@@ -1,0 +1,128 @@
+main h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #44AFAA;
+    text-align: center;
+}
+
+main section.resumen{
+    padding: 0% 20%;
+    margin-top: 2%;
+}
+
+main section.resumen p{
+    margin-bottom: 5px;
+}
+
+main h1.tit-admin{
+    margin: 40px 10px;
+}
+
+main section.administradores{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+main section.administradores article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+    -webkit-box-shadow: 1px 0px 26px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 26px -5px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 26px -5px rgba(0,0,0,0.75);
+}
+
+main section.administradores article img{
+    max-width: 500px;
+    border-radius: 50%;
+    margin-bottom: 10%;
+}
+
+main section.frases{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    padding: 3% 10%;
+    color: #44AFAA;
+}
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue;  */
+    }
+
+    main section.administradores{
+        display: flex;
+        height: fit-content;
+        justify-content: space-around;
+    }
+
+    main section.administradores article img{
+        max-width: 300px;
+        border-radius: 50%;
+        margin-bottom: 10%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main{
+         /* background-color: red;  */
+    }
+
+
+    main section.administradores{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main section.administradores article{
+        margin-bottom: 5%;
+    }
+
+}
+
+@media (max-width: 576px){
+    main{
+         /* background-color: green;  */
+    }
+
+}
+
+@media (max-width: 480px) {
+    main{
+         /* background-color: rgb(225, 171, 203);  */
+    }
+
+}
+
+@media (max-width: 400px) {
+    main{
+         /* background-color: rgb(140, 32, 198);  */
+    }
+
+
+}
+
+@media (max-width: 360px) {
+    main{
+         /* background-color: rgb(205, 62, 109); */
+    }
+
+    main section.administradores article img{
+        max-width: 200px;
+        border-radius: 50%;
+        margin-bottom: 10%;
+    }
+
+}

@@ -142,7 +142,9 @@ main form input[type="submit"]:hover{
          /* background-color: rgb(140, 32, 198);  */
     }
 
-
+    main form p.precio-total{
+        margin-left: 25px;
+    }
 
 }
 

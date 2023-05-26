@@ -98,11 +98,9 @@
         </header>
         <main>
             <%
-                System.out.println("holaaaa");
                 if (usuarioSesion == null || !(usuarioSesion instanceof Cliente)) {
                     out.println("<p style=\"height:60vh;text-align:center;font-size:27px;\">No tienes acceso a esta página. Regístrate como cliente para acceder a ella.</p>");
                 } else {
-                    System.out.println("eesta entrnaod aqui?");
             %>
             <form method="post" action="ActualizarCarrito" id="actualizarcarrito">
                 <h2>CARRITO</h2>
@@ -117,9 +115,7 @@
                 </article>
                 -->
                 <%
-                    System.out.println("y aqui?");
                     if (lineasCarrito != null && lineasCarrito.size() != 0) {
-                        System.out.println("hola");
                         for (LineaArticulo l : lineasCarrito) {
                 %>
                 <article>
@@ -159,24 +155,27 @@
                 </select>
 
                 <p class="precio-total">Total del carrito (IVA incluido): <%= cdao.calcularTotal(cdao.getByCliente(usuarioSesion.getCodigo()))%>€</p>
+                <%
+                
+                if(request.getAttribute("errorStock") != null && (boolean) request.getAttribute("errorStock")){
+                out.println("<p style=\"color:red;\">(*) No hay suficiente stock para confirmar el pedido</p>");
+                }
+                %>
                 <input type="submit" value="Confirmar pedido">
                 <!--<but //ton onclick="confirmarPedido()">Confirmar pedido</button>-->
             </form>
             <%
-                        System.out.println("hola???");
                     } else if (lineasCarrito == null || lineasCarrito.size() == 0) {
-                        System.out.println("hola2");
                         out.println("<p style=\"text-align:center;\">¡Todavía no hay ningún artículo en el carrito!</p>");
                     }
 
                 }
-                System.out.println("sdds");
             %>
         </main>
         <footer>
             <ul>
-                <li><a href="#">Contacta con nosotros</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="contacto.jsp">Contacta con nosotros</a></li>
+        <li><a href="sobre-nosotros.jsp">Sobre nosotros</a></li>
                 <li><a href="#">Preguntas frecuentes</a></li>
             </ul>
             <ul>
@@ -187,7 +186,9 @@
             <ul>
                 <li><a href="#">Condiciones generales</a></li>
                 <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Otros</a></li>
+                <li class="redes-sociales"><a href="https://www.instagram.com/nuskecentromascotas22/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/people/NUSK%C3%8B/100087463124674/"><i class="bi bi-facebook"></i></a>
+        </li>
             </ul>
         </footer>
     </body>

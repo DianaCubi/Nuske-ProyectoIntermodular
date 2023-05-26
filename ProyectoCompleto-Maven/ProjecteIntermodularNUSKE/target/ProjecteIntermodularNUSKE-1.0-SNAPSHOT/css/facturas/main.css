@@ -33,3 +33,104 @@ main article{
 a i.bi-trash{
     color:#44AFAA;
 }
+
+/*MEDIA QUERY*/
+@media (max-width: 1120px) {
+    main {
+        /* background-color: blue; */
+    }
+    
+    main article {
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "num-factura num-factura"
+            "num-pedido fecha-fact"
+            "direccion-fact total-fact"
+            "exp-xml exp-pdf";
+        justify-items: center;
+    }
+
+    main article p.num-factura {
+        grid-area: num-factura;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    main article p.num-pedido {
+        grid-area: num-pedido;
+    }
+
+    main article p.direccion-fact {
+        grid-area: direccion-fact;
+    }
+
+    main article p.fecha-fact {
+        grid-area: fecha-fact;
+    }
+
+    main article p.total-fact {
+        grid-area: total-fact;
+    }
+
+    main article a.exp-xml {
+        grid-area: exp-xml;
+    }
+
+    main article a.exp-pdf {
+        grid-area: exp-pdf;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main {
+        /* background-color: red; */
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    main {
+        /* background-color: green; */
+    }
+
+}
+
+@media (max-width: 480px) {
+    main {
+        /* background-color: rgb(225, 171, 203); */
+    }
+
+    main article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main article a.exp-xml, main article p.exp-pdf{
+        margin: 20px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    main {
+        /* background-color: rgb(140, 32, 198); */
+    }
+
+    main article form.fact{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 360px) {
+    main {
+        /* background-color: rgb(205, 62, 109); */
+    }
+
+}

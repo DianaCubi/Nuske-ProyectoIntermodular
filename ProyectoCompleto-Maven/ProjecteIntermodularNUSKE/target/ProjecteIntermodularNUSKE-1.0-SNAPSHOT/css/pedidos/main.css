@@ -44,6 +44,7 @@ main select {
 
 main article p.facturado {
     color: rgb(191, 18, 18);
+    letter-spacing: 1px;
 }
 
 main article form input[type="submit"] {
@@ -62,49 +63,58 @@ main article form input[type="submit"]:hover {
 /*MEDIA QUERY*/
 @media (max-width: 1120px) {
     main {
-        background-color: blue;
+        /* background-color: blue; */
     }
-    /* main article p.codigo-ped {
-        grid-area: "codigo-ped";
+    
+    main article {
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "codigo-ped codigo-ped"
+            "fecha-ped direccion-ped"
+            "estado-ped total-ped"
+            "fact fact";
+        justify-items: center;
+    }
+
+    main article p.codigo-ped {
+        grid-area: codigo-ped;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
     }
 
     main article p.fecha-ped {
-        grid-area: "fecha-ped";
+        grid-area: fecha-ped;
     }
 
     main article p.estado-ped {
-        grid-area: "estado-ped";
+        grid-area: estado-ped;
     }
 
     main article p.direccion-ped {
-        grid-area: "direccion-ped";
+        grid-area: direccion-ped;
     }
 
     main article p.total-ped {
-        grid-area: "total-ped";
+        grid-area: total-ped;
+        font-weight: bold;
     }
 
     main article p.fact,
     main article form.fact {
-        grid-area: "fact";
+        grid-area: fact;
     }
 
-    main article {
-        height: fit-content;
-        display: grid;
-        grid-template-columns: 300px 300px;
-        grid-template-rows: 50px 50px 50px 50px;
-        grid-template-areas:
-            "codigo-ped"
-            "fecha-ped direccion-ped"
-            "estado-ped total-ped"
-            "fact fact";
-    } */
+    main article p, main article form{
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     main {
-        background-color: red;
+        /* background-color: red; */
     }
 
 
@@ -112,31 +122,42 @@ main article form input[type="submit"]:hover {
 
 @media (max-width: 576px) {
     main {
-        background-color: green;
+        /* background-color: green; */
     }
 
+    main article {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
 
+    main article p.codigo-ped{
+        text-decoration: underline;
+    }
 }
 
 @media (max-width: 480px) {
     main {
-        background-color: rgb(225, 171, 203);
+        /* background-color: rgb(225, 171, 203); */
     }
 
 }
 
 @media (max-width: 400px) {
     main {
-        background-color: rgb(140, 32, 198);
+        /* background-color: rgb(140, 32, 198); */
     }
 
-
+    main article form.fact{
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
 @media (max-width: 360px) {
     main {
-        background-color: rgb(205, 62, 109);
+        /* background-color: rgb(205, 62, 109); */
     }
 
 }

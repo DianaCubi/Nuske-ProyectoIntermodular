@@ -31,6 +31,10 @@ footer ul li:hover a{
     text-decoration: underline;
 }
 
+footer ul li.redes-sociales>a{
+    margin-right: 20px;
+}
+
 @media (max-width: 480px){
     footer ul li a{
         font-size: 14px;

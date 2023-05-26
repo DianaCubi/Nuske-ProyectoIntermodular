@@ -1,0 +1,54 @@
+body{
+    min-height: 100vh;
+}
+
+main{
+    min-height: calc(100vh - 400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #44AFAA;
+    margin: 0;
+}
+
+main p{
+    margin-bottom: 40px;
+}
+
+main form{
+    padding: 10px;
+}
+
+main form input,main form textarea{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+main form textarea{
+    height: 135px;
+}
+
+
+main form input[type="submit"]{
+    width: 165px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #44AFAA;
+    background-color: #44AFAA;
+    color: rgb(247, 247, 247);
+    font-size: 20px;
+}
+
+main form input[type="submit"]:hover{
+    color: #44AFAA;
+    background-color: rgb(247, 247, 247);
+}

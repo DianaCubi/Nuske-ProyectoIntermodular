@@ -29,6 +29,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./iconos/LOGO.ico">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
@@ -97,7 +98,7 @@
           </p>
           <article class="botones">
             <a href="#productos" class="bot-comprar">Comprar ahora</a>
-            <a href="#" class="bot-contactar">Contáctanos</a>
+            <a href="contacto.jsp" class="bot-contactar">Contáctanos</a>
             <!--
               <input type="button" value="Comprar ahora" class="bot-comprar" />
               <input type="button" value="Contáctanos" class="bot-contactar" />
@@ -106,7 +107,7 @@
         </article>
         <article class="main-imagen">
           <figure>
-            <img src="./img/loro-main.png" alt="Foto de un perro" />
+            <img src="./img/loro-main.png" alt="Foto de un loro" />
           </figure>
         </article>
       </section>
@@ -145,8 +146,8 @@
     </main>
     <footer>
       <ul>
-        <li><a href="#">Contacta con nosotros</a></li>
-        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="contacto.jsp">Contacta con nosotros</a></li>
+        <li><a href="sobre-nosotros.jsp">Sobre nosotros</a></li>
         <li><a href="#">Preguntas frecuentes</a></li>
       </ul>
       <ul>
@@ -157,7 +158,9 @@
       <ul>
         <li><a href="#">Condiciones generales</a></li>
         <li><a href="#">Términos y condiciones</a></li>
-        <li><a href="#">Otros</a></li>
+        <li class="redes-sociales"><a href="https://www.instagram.com/nuskecentromascotas22/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/people/NUSK%C3%8B/100087463124674/"><i class="bi bi-facebook"></i></a>
+        </li>
       </ul>
     </footer>
   </body>

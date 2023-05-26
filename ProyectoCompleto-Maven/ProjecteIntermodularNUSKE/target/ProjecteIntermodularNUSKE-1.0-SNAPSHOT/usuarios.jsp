@@ -74,9 +74,9 @@
                 for(Usuario u : usuariosRegistrados){
             %>
             <article class="usuario">
-                <p class="codigo">Código usuario: <%= u.getCodigo() %></p>
+                <p class="codigo">Usuario nº: <span><%= u.getCodigo() %></span></p>
                 <p class="email"><%= u.getEmail() %></p>
-                <p class="ult_conexion">Últ. conexión: <%= u.getUltConexion().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))%></p>
+                <p class="ult_conexion"><i>Últ. conexión:</i> <span><%= u.getUltConexion().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))%></span></p>
                 <a href="#">Editar</a>
             </article>
             <%
@@ -86,8 +86,8 @@
     </main>
     <footer>
       <ul>
-        <li><a href="#">Contacta con nosotros</a></li>
-        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="contacto.jsp">Contacta con nosotros</a></li>
+        <li><a href="sobre-nosotros.jsp">Sobre nosotros</a></li>
         <li><a href="#">Preguntas frecuentes</a></li>
       </ul>
       <ul>
@@ -98,7 +98,9 @@
       <ul>
         <li><a href="#">Condiciones generales</a></li>
         <li><a href="#">Términos y condiciones</a></li>
-        <li><a href="#">Otros</a></li>
+        <li class="redes-sociales"><a href="https://www.instagram.com/nuskecentromascotas22/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/people/NUSK%C3%8B/100087463124674/"><i class="bi bi-facebook"></i></a>
+        </li>
       </ul>
     </footer>
   </body>

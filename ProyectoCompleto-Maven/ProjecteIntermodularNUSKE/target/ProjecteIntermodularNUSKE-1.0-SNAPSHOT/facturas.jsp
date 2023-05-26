@@ -98,13 +98,13 @@
                     }
                 %>
 
-                <p>Factura nº <%= fac.getNumeroFactura()%></p>
-                <p>Pedido nº <%= fac.getPedido().getCodigo()%></p>
-                <p><%= fac.getFacturacion().getDireccion()%></p>
-                <p><%= fac.getFechaFactura().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
-                <p><%= new CestaDAO().calcularTotal(fac.getPedido().getCesta())%>€</p>
-                <a href="ExportarXML?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-xml"></i></a>
-                <a href="ExportarPDF?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-pdf"></i></a>
+                <p class="num-factura">Factura nº <%= fac.getNumeroFactura()%></p>
+                <p class="num-pedido">Pedido nº <%= fac.getPedido().getCodigo()%></p>
+                <p class="direccion-fact"><%= fac.getFacturacion().getDireccion()%></p>
+                <p class="fecha-fact"><%= fac.getFechaFactura().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))%></p>
+                <p class="total-fact"><%= new CestaDAO().calcularTotal(fac.getPedido().getCesta())%>€</p>
+                <a class="exp-xml" href="ExportarXML?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-xml"></i></a>
+                <a class="exp-pdf" href="ExportarPDF?id=<%= fac.getNumeroFactura() %>"><i class="bi bi-filetype-pdf"></i></a>
             </article>
             <%
                         }
@@ -117,8 +117,8 @@
         </main>
         <footer>
             <ul>
-                <li><a href="#">Contacta con nosotros</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="contacto.jsp">Contacta con nosotros</a></li>
+        <li><a href="sobre-nosotros.jsp">Sobre nosotros</a></li>
                 <li><a href="#">Preguntas frecuentes</a></li>
             </ul>
             <ul>
@@ -129,7 +129,9 @@
             <ul>
                 <li><a href="#">Condiciones generales</a></li>
                 <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Otros</a></li>
+                <li class="redes-sociales"><a href="https://www.instagram.com/nuskecentromascotas22/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/people/NUSK%C3%8B/100087463124674/"><i class="bi bi-facebook"></i></a>
+        </li>
             </ul>
         </footer>
     </body>
