@@ -151,11 +151,18 @@ main section.main-inferior a article.producto p:last-child {
 
 
 
-/*MEDIA QUERY 1120PX*/
+/*MEDIA QUERY*/
+@media (max-width: 1400px) {
+    main section.main-inferior section.productos a{
+        width: 33%;
+    }
+
+}
+
 @media (max-width: 1120px) {
     main {
         width: 100%;
-         /*background-color: blue;*/ 
+         /* background-color: blue;  */
     }
 
     main section.main-superior {
@@ -182,17 +189,31 @@ main section.main-inferior a article.producto p:last-child {
     main section.main-superior article.bienvenida article.botones{
         justify-content: center;
     }
+    
 
     main section.main-superior img {
         width: 400px;
     }
 
+    /* ESTO */
+
+    main section.main-inferior section.productos a{
+        width: 38%;
+    }
+
+    /* main section.main-inferior section.productos a article.producto article.imagen figure{
+        margin: 30px 0;
+    }
+
+    main section.main-inferior section.productos a article.producto article.imagen figure img{
+        height: 167px;
+    } */
 }
 
 @media (max-width: 768px) {
     main{
         width: 100vw;
-         /* background-color: red; */ 
+         /* background-color: red;  */
     }
 
     main section.main-inferior a article.producto p:first-child {
@@ -218,7 +239,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 576px){
     main{
-         /*background-color: green;*/ 
+         /* background-color: green;  */
     }
 
     main section.main-inferior a{
@@ -238,7 +259,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 480px) {
     main{
-         /*background-color: rgb(225, 171, 203);*/ 
+         /* background-color: rgb(225, 171, 203);  */
     }
 
     main section.main-inferior section.productos{
@@ -260,7 +281,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 400px) {
     main{
-         /*background-color: rgb(140, 32, 198);*/ 
+         /* background-color: rgb(140, 32, 198);  */
     }
 
     main section.main-superior img {
@@ -274,7 +295,7 @@ main section.main-inferior a article.producto p:last-child {
 
 @media (max-width: 360px) {
     main{
-         /*background-color: rgb(205, 62, 109);*/ 
+         /* background-color: rgb(205, 62, 109);  */
     }
     
 
@@ -283,8 +304,3 @@ main section.main-inferior a article.producto p:last-child {
     }
 }
 
-/* @media (min-width: 1200px) {
-    main{
-        background-color: rgb(219, 214, 66);
-    }
-} */
